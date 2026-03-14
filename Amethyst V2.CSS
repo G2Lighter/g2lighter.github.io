@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.5.4 STABLE
+* 主题版本-Theme Version: v0.5.5 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.5.4 STABLE";
+    --version: "v0.5.5 STABLE";
     --theme-color: #9575ff;
     --accent-color: #2d2d2df0;
     --background-color: #1f1e1e;
@@ -4788,6 +4788,16 @@ div[class$="_memo"]::before {
     line-break: normal;
 }
 
+.simpletodo-box {
+	border: var(--basic-border);
+	max-width: 80%;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+}
+
 .wd-editor-toolbar-panel div,
 .wd-editor-toolbar-panel div > ul,
 label {
@@ -5822,6 +5832,11 @@ div.creditButtonStandalone p a {
 div.creditButtonStandalone p a:hover {
     background: var(--theme-color);
     text-decoration: none;
+}
+
+.creditHorm {
+    position: relative;
+    z-index: 600;
 }
 
 /* 底栏模块适配 */
