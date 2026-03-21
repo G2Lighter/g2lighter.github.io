@@ -5760,7 +5760,7 @@ div #u-credit-view, div #u-credit-otherwise {
     z-index: 300;
 }
 
-div.creditButtonStandalone p a::before, .creditButton p a::before {
+div.creditButtonStandalone p a::before, div .creditButton p a::before {
     content: 'I';
 }
 
@@ -5833,12 +5833,15 @@ div.creditButtonStandalone p a:hover {
     background: var(--theme-color);
     text-decoration: none;
 }
-
 .creditHorm {
-    position: relative;
+    z-index: auto;
+}
+.creditHorm .creditButton {
+    /* background-color: 没找到 */;
+}
+div .colmod-block.creditHorm .colmod-content {
     z-index: 600;
 }
-
 /* 底栏模块适配 */
 .nav.nav-pills {
     list-style: none;
