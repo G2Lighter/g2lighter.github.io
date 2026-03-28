@@ -1,0 +1,18 @@
+/*
+* 版式名-Theme Name：紫晶 V2
+* 设计者-Theme Designer：G2Lighter
+* 主题版本-Theme Version: v0.5.5 STABLE
+* https://g2lighter.wikidot.com/theme:amethyst-v2
+* https://scp-wiki-cn.wikidot.com/theme:amethyst-v2
+*/
+
+@import url("https://g2lighter.github.io/theme/Amethyst%20V2/Amethyst%20V2.CSS");
+
+/* SCP适配 */
+
+:root {
+    --title: "SCP基金会";
+    --subtitle: "控制，收容，保护";
+    --logo: url(https://bhl.scpwikicn.com/img/logo.svg);
+}
+
