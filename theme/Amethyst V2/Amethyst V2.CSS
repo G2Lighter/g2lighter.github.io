@@ -5749,6 +5749,7 @@ body .creditButton p a {
     color: var(--highlight-color);
     -webkit-transition: .1s;
     transition: .1s;
+    background: #633;
 }
 
 body .creditButton p a:hover {
