@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.5.5 STABLE
+* 主题版本-Theme Version: v0.5.6 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.5.5 STABLE";
+    --version: "v0.5.6 STABLE";
     --theme-color: #9575ff;
     --accent-color: #2d2d2df0;
     --background-color: #1f1e1e;
@@ -750,6 +750,7 @@ div.wiki-note {
     margin: 0;
     padding: .5em 0;
     height: 1%;
+    clear: both;
 }
 
 .footnotes-footer .title {
@@ -1715,6 +1716,7 @@ version: 2.3.1
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    clear: both;
 }
 
 .yui-navset .yui-nav li,
@@ -1727,6 +1729,7 @@ version: 2.3.1
             flex: max-content;
     background: var(--accent-color);
     position: relative;
+    width: 100%;
 }
 
 .yui-navset .yui-nav .selected,
@@ -3625,6 +3628,7 @@ blockquote,
     background: var(--accent-color);
     -webkit-box-shadow: 2px 1px 5px -2px var(--shadow-color);
             box-shadow: 2px 1px 5px -2px var(--shadow-color);
+    clear: both;
 }
 
 /* 基础布局 */
@@ -6030,6 +6034,7 @@ div .colmod-block.creditHorm .colmod-content {
         scrollbar-width: none;
         height: 100%;
         max-width: 100%;
+        overflow-x:visible;
     }
     #side-bar:hover {
         left: unset;
