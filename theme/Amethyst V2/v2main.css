@@ -1,8 +1,7 @@
 @import "https://g2lighter.github.io/theme/Amethyst%20V2/Amethyst%20V2.CSS";
+@import "https://g2lighter.github.io/misc/scpComponent.css";
 
-/* v0.5.5 */
-
-/* 前置 */
+/* 节日前置 */
 
 .christmas, .newyr {
     display: none;
