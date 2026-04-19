@@ -3834,7 +3834,7 @@ blockquote,
             box-shadow: 1px 2px 3px -1px var(--shadow-color);
 }
 
-#top-bar li ul::after, #header::after {
+#header::after {
     content: '';
     width: 100%;
     height: 100%;
@@ -3843,6 +3843,10 @@ blockquote,
     top: 0;
     backdrop-filter: blur(3px);
     z-index: -1;
+}
+
+#header #top-bar li li a {
+    backdrop-filter: blur(3px);
 }
 
 #header #top-bar li li a::after {
