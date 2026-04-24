@@ -6039,7 +6039,7 @@ div .colmod-block.creditHorm .colmod-content {
         scrollbar-width: none;
         height: 100%;
         max-width: 100%;
-        overflow-x:visible;
+        overflow: auto;
     }
     #side-bar:hover {
         left: unset;
