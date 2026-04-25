@@ -1,7 +1,8 @@
+/* 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css');
-
+*/
 /* 著作评分模块 */
-
+/*
 #u-credit-view, #u-credit-otherwise {
     width: 100%;
     height: 100%;
@@ -107,7 +108,6 @@
     pointer-events: auto !important;
 }
 .modalbox{
-    /*min-width: 400px;*/
     background: #fefefe;
     background:linear-gradient(#eee 51px,#fefefe 51px,#fefefe);
     border: #333 solid 1px;
@@ -122,9 +122,6 @@
 }
 .modalbox .credit {
     margin: 2em;
-}
-.modalbox .credit p {
-    /*margin: 0;*/
 }
 .modalbox .credit:not(:first-child) {
     margin-top: 0;
@@ -148,12 +145,6 @@
 #u-credit-view {
     height: 100%;
     top: 0;
-}
-.modalcontainer{
-    /*min-width: 300px;*/
-}
-.modalbox{
-    /*min-width: 300px;*/
 }
 }
 #u-credit-view-button {
@@ -254,16 +245,15 @@
     background: #3498db;
 }
 
-/* Give a little expandability to the box */
 .credit.first {
     height: 30vh;
     overflow-y: auto;
 }
 
-/* Add a lil X to close the box */
 .close-credits {
     position: absolute;
     top: 1.5em;
     right: 1.5em;
     width: 1em;
 }
+*/
