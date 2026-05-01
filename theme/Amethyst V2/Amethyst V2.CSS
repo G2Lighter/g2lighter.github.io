@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.5.6 STABLE
+* 主题版本-Theme Version: v0.5.7 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.5.6 STABLE";
+    --version: "v0.5.7 STABLE";
     --theme-color: #9575ff;
     --accent-color: #2d2d2df0;
     --background-color: #1f1e1e;
@@ -624,6 +624,7 @@ table.wiki-content-table {
     border-collapse: collapse;
     border-spacing: 0;
     margin: .5em auto;
+    display: block;
 }
 table.wiki-content-table td {
     border: 1px solid #888;
@@ -4087,6 +4088,7 @@ blockquote,
     padding: 0;
     -webkit-transition: .2s .2s;
     transition: .2s .2s;
+    pointer-events: none;
     z-index: 200;
     direction: rtl;
 }
@@ -4097,6 +4099,7 @@ blockquote,
     transition: .2s;
     -webkit-box-shadow: 3px 20px 9px var(--shadow-color);
             box-shadow: 3px 20px 9px var(--shadow-color);
+    pointer-events: all;
 }
 
 #side-bar::before,
@@ -4109,6 +4112,7 @@ blockquote,
     height: var(--header-height);
     -webkit-transition: .2s .2s;
     transition: .2s .2s;
+    pointer-events: all;
     z-index: 10;
 }
 
@@ -4227,7 +4231,7 @@ blockquote,
     -webkit-box-flex: 1;
     -ms-flex: 1 0 max-content;
     flex: 1 0 max-content;
-	min-width: 6em;
+    min-width: 6em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -5846,9 +5850,6 @@ div.creditButtonStandalone p a:hover {
 .creditHorm {
     z-index: auto;
 }
-.creditHorm .creditButton {
-    /* background-color: 没找到 */;
-}
 div .colmod-block.creditHorm .colmod-content {
     z-index: 600;
 }
@@ -6034,12 +6035,17 @@ div .colmod-block.creditHorm .colmod-content {
         position: fixed;
         top: 0;
         left: unset;
-        right: -20em;
+        right: -5em;
         width: 20em;
+        background: transparent;
         scrollbar-width: none;
         height: 100%;
         max-width: 100%;
         overflow: auto;
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        -moz-transition: .2s;
+        transition: .2s;
     }
     #side-bar:hover {
         left: unset;
@@ -6052,11 +6058,28 @@ div .colmod-block.creditHorm .colmod-content {
         left: unset;
         right: 0;
         -webkit-transform: rotateX(180deg);
-                transform: rotateX(180deg);
+                -moz-transform: rotateX(180deg);
+             transform: rotateX(180deg);
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        -moz-transition: .2s;
+        transition: .2s;
     }
 
     #side-bar::after {
         rotate: 180deg;
+    }
+
+    #side-bar * {
+        opacity: 0;
+        -webkit-transition: .2s;
+        -o-transition: .2s;
+        -moz-transition: .2s;
+        transition: .2s;
+    }
+
+    #side-bar:hover * {
+        opacity: 1;
     }
 
     #main-content {
