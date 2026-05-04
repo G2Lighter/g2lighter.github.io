@@ -1,1 +1,326 @@
 /* 著作评分模块 */
+@import url(https://cdnjs.cloudflare.com/ajax/libs/cc-icons/1.2.1/css/cc-icons.min.css);
+
+@keyframes fade-in {
+    0% {
+        display: none;
+        opacity: 0
+    }
+
+    1% {
+        display: block;
+        opacity: 0
+    }
+
+    to {
+        display: block;
+        opacity: 1
+    }
+}
+
+@-moz-keyframes fade-in {
+    0% {
+        display: none;
+        opacity: 0
+    }
+
+    1% {
+        display: block;
+        opacity: 0
+    }
+
+    to {
+        display: block;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fade-in {
+    0% {
+        display: none;
+        opacity: 0
+    }
+
+    1% {
+        display: block;
+        opacity: 0
+    }
+
+    to {
+        display: block;
+        opacity: 1
+    }
+}
+
+.creditRate #u-credit-otherwise,.creditRate #u-credit-view {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    z-index: 10
+}
+
+.creditRate #u-credit-otherwise:not(:target),.creditRate #u-credit-view:not(:target) {
+    opacity: 0;
+    display: none
+}
+
+.creditRate #u-credit-otherwise:target,.creditRate #u-credit-view:target {
+    opacity: 1;
+    animation-duration: .3s;
+    animation-name: fade-in;
+    -moz-animation-duration: .5s;
+    -moz-animation-name: fade-in;
+    -webkit-animation-duration: .5s;
+    -webkit-animation-name: fade-in
+}
+
+.creditRate .fader {
+    background-color: rgba(0,0,0,.5)
+}
+
+.creditRate .fader,.fader a,.creditRate .fader iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+.creditRate .modalbox,.creditRate .modalcontainer {
+    pointer-events: auto!important
+}
+
+.creditRate .modalcontainer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 600px;
+    max-width: 95vw!important;
+    height: 350px;
+    margin: auto
+}
+
+.creditRate .modalbox {
+    background: #fefefe;
+    border: #333 solid 1px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(102,0,0,.5);
+    padding: 4px;
+    max-height: 50vh
+}
+
+.creditRate #u-credit-otherwise .modalbox,.modalbox {
+    background: linear-gradient(#eee 51px,#fefefe 51px,#fefefe)
+}
+
+.creditRate .modalbox .credit {
+    margin: 2em
+}
+
+.creditRate .modalbox .credit:not(:first-child) {
+    margin-top: 0
+}
+
+.creditRate .modalbox .credit:not(:last-child) {
+    margin-bottom: 0
+}
+
+.creditRate .modalbox .credit.otherwise {
+    overflow-y: auto;
+    height: 30vh
+}
+
+.creditRate #u-credit-otherwise .creditBottomRate,.creditRate #u-credit-view .credit-back,.creditRate .credit-back .back a {
+    display: none
+}
+
+@media (max-width:767px) {
+    .creditRate #u-credit-view {
+        height: 100%;
+        top: 0
+    }
+}
+
+.creditRate #u-credit-view-button {
+    display: block;
+    text-align: right
+}
+
+.creditRate {
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    float: right;
+    margin-bottom: 10px;
+    margin-right: 2em
+}
+
+.creditRate p {
+    line-height: 0
+}
+
+.creditRate .page-rate-widget-box {
+    margin: 0;
+    padding: 0
+}
+
+.creditRate .audio-img-block {
+    top: 0
+}
+
+.creditRate .rate-box-with-credit-button {
+    background-color: #633;
+    border: solid 1px #633;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.5)
+}
+
+.creditRate .rate-box-with-credit-button .page-rate-widget-box .cancel {
+    border-right: 0
+}
+
+.creditRate .rate-box-with-credit-button .page-rate-widget-box {
+    box-shadow: none
+}
+
+.creditRate .rateBox,.creditRate .rate-box-with-credit-button .creditButton {
+    display: inline-block
+}
+
+.creditRate .rateBox p,.creditRate p {
+    display: inline;
+    margin: 0;
+    padding: 0
+}
+
+.creditRate .creditButton p {
+    font-size: .8em
+}
+
+.creditRate .creditButton p a,.creditRate .creditButtonStandalone p a {
+    width: 17px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px
+}
+
+.creditRate .creditButton p a {
+    margin-left: -5px;
+    padding-top: .5px;
+    border-left: solid 1px #966;
+    text-decoration: none
+}
+
+.creditRate .creditButton p a:hover {
+    color: #3498db
+}
+
+.creditRate .modalbox .page-rate-widget-box {
+    margin-right: 0
+}
+
+.creditRate .credit-back .back a::before {
+    content: "Back"
+}
+
+.creditRate .creditButtonStandalone p a {
+    display: block;
+    height: 17px;
+    line-height: 17px;
+    border-radius: 50%;
+    background: #744;
+    box-shadow: 0 0 3px var(--shadow-color);
+}
+
+.creditRate .creditButtonStandalone p a:hover {
+    background: #3498db
+}
+
+.creditRate .credit.first {
+    height: 30vh;
+    overflow-y: auto
+}
+
+.creditRate .close-credits {
+    position: absolute;
+    top: 1.5em;
+    right: 1.5em;
+    width: 1em
+}
+.creditRate .creditRate {
+    margin-right: 0;
+}
+
+.creditRate .rate-box-with-credit-button {
+    border: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 0;
+}
+
+.creditRate .rate-box-with-credit-button .creditButton {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 1rem;
+}
+
+.creditRate .modalcontainer {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+}
+
+.creditRate .fader {
+    backdrop-filter: blur(1px);
+}
+
+.creditRate .creditButton p a {
+    margin-left: 0;
+    padding-top: 0;
+    width: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-left: none;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: var(--highlight-color);
+    -webkit-transition: .1s;
+    transition: .1s;
+    background: #633;
+}
+
+.creditRate .creditButton p a:hover {
+    color: var(--highlight-color);
+    background: var(--theme-color);
+}
+
+.creditRate #u-credit-view, .creditRate #u-credit-otherwise {
+    z-index: 300;
+}
+
+.creditRate div.creditButtonStandalone p a::before, .creditRate .creditButton p a::before {
+    content: 'I';
+}
