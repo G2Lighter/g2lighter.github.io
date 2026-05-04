@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.5.5 STABLE
+* 主题版本-Theme Version: v0.5.7 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 * https://scp-wiki-cn.wikidot.com/theme:amethyst-v2
 */
@@ -16,3 +16,13 @@
     --logo: url(https://bhl.scpwikicn.com/img/logo.svg);
 }
 
+@media only screen and (max-width: 1024px) {
+    #top-bar li > ul, #top-bar li:hover > ul {
+        max-height: min(calc(7* var(--header-height)), calc(100vh - var(--header-height) *3));
+        min-height: var(--header-height);
+    }
+
+    #top-bar li > ul {
+        min-height: 0px;
+    }
+}
