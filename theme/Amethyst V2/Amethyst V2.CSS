@@ -4141,6 +4141,7 @@ blockquote,
 #side-bar * {
     direction: ltr;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .menu-item {
@@ -6046,7 +6047,9 @@ div .colmod-block.creditHorm .colmod-content {
         -o-transition: .2s;
         -moz-transition: .2s;
         transition: .2s;
+        direction: ltr;
     }
+
     #side-bar:hover {
         left: unset;
         right: 0;
