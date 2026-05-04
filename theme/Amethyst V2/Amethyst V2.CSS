@@ -3818,6 +3818,7 @@ blockquote,
     opacity: 0;
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
+    z-index: 1;
 }
 
 #header #top-bar li li:hover>ul {
