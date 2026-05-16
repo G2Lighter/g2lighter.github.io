@@ -240,8 +240,8 @@ a.newpage {
 
 #page-title {
     margin: 0 0 .5em 0;
-    padding-top: .5em; /* Firefox bug? */
-    padding: .5em 0 0 .5em;
+    padding-top: .5em;
+    padding: 0 0 0 .5em;
     font-size: 200%;
     font-weight: bold;
     border-bottom: 1px solid #666;
@@ -3635,7 +3635,7 @@ blockquote,
 /* 基础布局 */
 
 #main-content {
-    margin: 0 auto;
+    margin: 1em auto 0;
     width: 70%;
     min-height: calc(100vh - var(--header-height) * 3 - 3.14rem);
     max-width: 57rem;
