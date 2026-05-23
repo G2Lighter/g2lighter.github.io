@@ -3525,6 +3525,10 @@ option:hover {
     border-radius: .1em 0;
 }
 
+#top-bar ::-webkit-scrollbar {
+    display: none
+}
+
 /* 组件配置 */
 
 .btn, input.button, div.buttons input, input.button, button, file, a.button, .owindow .button-bar a, .change-textarea-size a, a[onclick*="delete"],
