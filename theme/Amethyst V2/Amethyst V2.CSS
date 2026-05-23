@@ -4149,6 +4149,10 @@ blockquote,
     transition: .2s .2s;
 }
 
+#side-bar * {
+    white-space: wrap;
+}
+
 .menu-item {
     padding: 0;
     display: -webkit-box;
