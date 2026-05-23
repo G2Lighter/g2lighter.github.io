@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.5.7 STABLE
+* 主题版本-Theme Version: v0.5.8 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.5.7 STABLE";
+    --version: "v0.5.8 STABLE";
     --theme-color: #9575ff;
     --accent-color: #2d2d2df0;
     --background-color: #1f1e1e;
@@ -4079,11 +4079,11 @@ blockquote,
 
 #side-bar {
     position: fixed;
-    left: 0;
+    left: -5em;
     top: var(--header-height);
-    background: var(--background-color);
+    background: transparent;
     height: calc(100% - var(--header-height));
-    width: 0;
+    width: var(--sidebar-width);
     overflow-x: hidden;
     padding: 0;
     -webkit-transition: .2s .2s;
@@ -4094,9 +4094,10 @@ blockquote,
 }
 
 #side-bar:hover {
-    width: var(--sidebar-width);
     -webkit-transition: .2s;
     transition: .2s;
+    left: 0;
+    background: var(--background-color);
     -webkit-box-shadow: 3px 20px 9px var(--shadow-color);
             box-shadow: 3px 20px 9px var(--shadow-color);
     pointer-events: all;
@@ -4133,15 +4134,19 @@ blockquote,
     transition: .2s;
 }
 
-#side-bar:hover::after {
+#side-bar:hover::after, #side-bar:hover * {
+    opacity: 1;
     -webkit-transition: .2s;
     transition: .2s;
 }
 
-#side-bar * {
+#side-bar>* {
     direction: ltr;
     text-align: center;
     flex-wrap: wrap;
+    opacity: 0;
+    -webkit-transition: .2s .2s;
+    transition: .2s .2s;
 }
 
 .menu-item {
@@ -6074,15 +6079,8 @@ div .colmod-block.creditHorm .colmod-content {
     }
 
     #side-bar * {
-        opacity: 0;
         -webkit-transition: .2s;
-        -o-transition: .2s;
-        -moz-transition: .2s;
         transition: .2s;
-    }
-
-    #side-bar:hover * {
-        opacity: 1;
     }
 
     #main-content {
