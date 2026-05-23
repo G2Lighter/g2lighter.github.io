@@ -92,7 +92,8 @@ h6 {
 #main-content h4::before,
 #main-content h5::before,
 #main-content h6::before,
-.footnotes-footer .title::before {
+.footnotes-footer .title::before,
+.bibitems .title::before {
     content: "";
     color: transparent;
     height: 100%;
@@ -754,7 +755,8 @@ div.wiki-note {
     clear: both;
 }
 
-.footnotes-footer .title {
+.footnotes-footer .title,
+.bibitems .title {
     margin: .5em 0;
     font-size: 130%;
     font-weight: bold;
