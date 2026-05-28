@@ -229,8 +229,8 @@ a.newpage {
 #side-bar {
     float: left;
     width: 14em;
-    padding: 1em;
-    margin: 0 0 1em 0;
+    padding: 0 0 var(--header-height);
+    margin: var(--header-height) 0 0;
     clear: left;
 }
 
@@ -4084,12 +4084,11 @@ blockquote,
 #side-bar {
     position: fixed;
     left: -5em;
-    top: var(--header-height);
+    top: 0;
     background: transparent;
     height: calc(100% - var(--header-height));
     width: var(--sidebar-width);
     overflow-x: hidden;
-    padding: 0;
     -webkit-transition: .2s .2s;
     transition: .2s .2s;
     pointer-events: none;
@@ -6047,11 +6046,10 @@ div .colmod-block.creditHorm .colmod-content {
     
     #side-bar {
         position: fixed;
-        top: 0;
         left: unset;
         right: -5em;
         width: 20em;
-        background: transparent;
+        margin: 0;
         scrollbar-width: none;
         height: 100%;
         max-width: 100%;
