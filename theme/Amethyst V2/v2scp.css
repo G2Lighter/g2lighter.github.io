@@ -78,10 +78,6 @@
 :root:lang(th) {
     --title: 'สถาบัน SCP';
     --subtitle: 'ควบคุม, กักกัน, ป้องกัน';
-    --body-font-fallback: 'Kanit',-apple-system,system-ui,blinkmacsystemfont,'Segoe UI',verdana,geneva,sans-serif;
-    --UI-font-fallback: 'Kanit','Thonburi','Leelawadee UI','Cordia New',roboto,noto,'Noto Sans Thai',sans-serif;
-    --font-fallback: var(--body-font-fallback);
-    --mono-font-fallback: 'Kanit',consolas,monaco,monospace
 }
 
 :root:lang(zh) {
