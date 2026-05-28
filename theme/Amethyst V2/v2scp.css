@@ -95,7 +95,9 @@
     --subtitle: 'QUẢN THÚC - LƯU TRỮ - BẢO VỆ'
 }
 
-
+#side-bar .close-menu {
+    display: none;
+}
 @media only screen and (max-width: 1024px) {
     #top-bar li > ul, #top-bar li:hover > ul {
         max-height: min(calc(7* var(--height), calc(100vh - var(--height) *3);
