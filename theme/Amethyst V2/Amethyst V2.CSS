@@ -6023,10 +6023,10 @@ div .colmod-block.creditHorm .colmod-content {
         width: var(--header-height);
         height: var(--header-height);
         background: transparent;
-        -webkit-mask-image: -webkit-gradient(linear,left top, right top,from(#000e), color-stop(50%, #000e), to(transparent));
-        -webkit-mask-image: linear-gradient(90deg,#000e 0%, #000e 50%, transparent 100%);
-                mask-image: -webkit-gradient(linear,left top, right top,from(#000e), color-stop(50%, #000e), to(transparent));
-                mask-image: linear-gradient(90deg,#000e 0%, #000e 50%, transparent 100%);
+        -webkit-mask-image: -webkit-gradient(linear,left top, right top,from(#000), color-stop(70%, #000c), to(transparent));
+        -webkit-mask-image: linear-gradient(90deg,#000 0%, #000c 70%, transparent 100%);
+                mask-image: -webkit-gradient(linear,left top, right top,from(#000), color-stop(70%, #000c), to(transparent));
+                mask-image: linear-gradient(90deg,#000 0%, #000c 70%, transparent 100%);
         -webkit-transition: .3s;
         transition: .3s;
         z-index: -1;
