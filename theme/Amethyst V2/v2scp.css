@@ -9,17 +9,101 @@
 @import url("https://g2lighter.github.io/theme/Amethyst%20V2/Amethyst%20V2.CSS");
 @import url("https://g2lighter.github.io/theme/Amethyst%20V2/scpComponent.css");
 /* SCP适配 */
-
 :root {
     --title: "SCP基金会";
     --subtitle: "控制，收容，保护";
     --logo: url(https://bhl.scpwikicn.com/img/logo.svg);
 }
+/* 标题翻译改自玄武岩 */
+:root:lang(en) {
+    --title: 'SCP Foundation';
+    --subtitle: 'SECURE - CONTAIN - PROTECT';
+}
+
+:root:lang(cs) {
+    --title: 'SCP Nadace';
+    --subtitle: 'ČESKÁ VĚTEV SCP NADACE'
+}
+
+:root:lang(fr) {
+    --title: 'Fondation SCP';
+    --subtitle: 'SÉCURISER - CONTENIR - PROTÉGER';
+}
+
+:root:lang(de) {
+    --title: 'SCP Foundation';
+    --subtitle: 'AUF DEUTSCH';
+}
+
+:root:lang(el) {
+    --title: 'Το Ίδρυμα SCP';
+    --subtitle: 'ΕΛΛΗΝΌΦΩΝΟΣ ΚΛΆΔΟΣ'
+}
+
+:root:lang(it) {
+    --title: 'Fondazione SCP';
+    --subtitle: 'BRANCA ITALIANA - SCP FOUNDATION';
+}
+
+:root:lang(ja) {
+    --title: 'SCP財団';
+    --subtitle: '確保、収容、保護';
+}
+
+:root:lang(ko) {
+    --title: 'SCP 재단';
+    --subtitle: '확보 - 격리 - 보호';
+}
+
+:root:lang(pl) {
+    --title: 'Fundacja SCP';
+    --subtitle: 'POLSKA FILIA SCP';
+}
+
+:root:lang(pt-br) {
+    --title: 'Fundação SCP';
+    --subtitle: 'FILIAL LUSÓFONA';
+}
+
+:root:lang(ru) {
+    --title: 'SCP Foundation';
+    --subtitle: 'RUSSIAN BRANCH';
+}
+
+:root:lang(es) {
+    --title: 'La Fundación SCP';
+    --subtitle: 'RAMA HISPANOHABLANTE'
+}
+
+:root:lang(th) {
+    --title: 'สถาบัน SCP';
+    --subtitle: 'ควบคุม, กักกัน, ป้องกัน';
+    --body-font-fallback: 'Kanit',-apple-system,system-ui,blinkmacsystemfont,'Segoe UI',verdana,geneva,sans-serif;
+    --UI-font-fallback: 'Kanit','Thonburi','Leelawadee UI','Cordia New',roboto,noto,'Noto Sans Thai',sans-serif;
+    --font-fallback: var(--body-font-fallback);
+    --mono-font-fallback: 'Kanit',consolas,monaco,monospace
+}
+
+:root:lang(zh) {
+    --title: 'SCP基金會';
+    --subtitle: '控制，收容，保護';
+}
+
+:root:lang(uk) {
+    --title: 'Фонд SCP.';
+    --subtitle: 'ОХОРОНЯТИ. УТРИМУВАТИ. ЗАХИЩАТИ.';
+}
+
+:root:lang(vi) {
+    --title: 'Tổ Chức SCP';
+    --subtitle: 'QUẢN THÚC - LƯU TRỮ - BẢO VỆ'
+}
+
 
 @media only screen and (max-width: 1024px) {
     #top-bar li > ul, #top-bar li:hover > ul {
-        max-height: min(calc(7* var(--header-height)), calc(100vh - var(--header-height) *3));
-        min-height: var(--header-height);
+        max-height: min(calc(7* var(--height), calc(100vh - var(--height) *3);
+        min-height: var(--height);
     }
 
     #top-bar li > ul {
