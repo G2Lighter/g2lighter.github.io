@@ -304,6 +304,10 @@ a.newpage {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: max-content;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 5px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -5485,8 +5489,11 @@ table.form td:last-child {
 #breadcrumbs a,
 .forum-breadcrumbs a {
     padding: .2em .4em;
-    margin-right: 5px;
+    margin: 0;
     display: block;
+    line-height: 1.3em;
+    flex: 1 0 max-content;
+    text-align: center;
     background: var(--accent-color);
     border-radius: 0 .7em;
     overflow: hidden;
@@ -5551,6 +5558,9 @@ a[href*="/system:page-tags/tag/_"] {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    width: max-content;
+    max-width: 100%;
+    gap: 5px;
 }
 
 /* 评分模块 */
