@@ -4327,12 +4327,17 @@ blockquote,
 
 .thread-container .post .head {
     background: var(--accent-color);
-    padding: 0 .5em .2em;
+    padding: .3rem .4em;
+    border-left: 1px solid var(--theme-color);
 }
 
 .thread-container .post .long .head .title {
     border-left: .15em solid var(--theme-color);
-    margin-left: -0.35em;
+    margin: -.3rem 0 0 -.35em;
+}
+
+.thread-container .post .long .head .info {
+    margin-top: .3rem;
 }
 
 div.new-post a {
