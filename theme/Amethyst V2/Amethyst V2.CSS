@@ -6335,6 +6335,9 @@ textarea.form-control.form-wiki {
     --nodraft: 'No draft pages found.';
     --editOriginal: 'Edit Original';
     --editDraft: 'Edit Draft';
+    --draftExists: 'Draft Exists';
+    --youHaveSavedDraft: 'You have saved draft. Select one option';
+    --draftOfThisPage: 'You have saved the draft of this page. Do you want to edit the draft? Please note that editing and saving the original will discard all changes saved in draft.';
 }
 
 :root:lang(cn) {
@@ -6371,6 +6374,15 @@ textarea.form-control.form-wiki {
     --nodraft: '当前无草稿';
     --editOriginal: '从原始状态编辑';
     --editDraft: '继承草稿';
+    --deleteDraft: '退出并删除草稿';
+    --leaveDraft: '退出并保留草稿';
+    --deleteDraft: 'Cancel and Delete Draft';
+    --leaveDraft: 'Cancel and Leave Draft';
+    --draftExists: 'Draft Exists';
+    --youHaveSavedDraft: 'You have saved draft. Select one option';
+    --draftExists: '存在草稿';
+    --youHaveSavedDraft: '你有已保存的草稿，请选择一个选项';
+    --draftOfThisPage: '你已保存此页面的草稿。是否要编辑该草稿？请注意，编辑并保存原页面将会丢弃草稿中保存的所有更改。';
 }
 
 #rename-option-delete p {
@@ -6546,11 +6558,11 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
     color: var(--highlight-color);
 }
 
-.owindow:has([id*=wizard]) .title, .content:has(a[onclick*="scrollTo"]), .content a[onclick*="scrollTo"] {
+.owindow:has([id*=wizard]) .title, .content:has(a[onclick*="scrollTo"]), .content a[onclick*="scrollTo"], .owindow:has([class*=draft]) .title, .owindow:has([class*=draft]) .content {
     font-size: 0;
 }
 
-.owindow:has([id*=wizard]) .title::before {
+.owindow:has([id*=wizard]) .title::before, .owindow:has([class*=draft]) .title::before {
     font-size: .984rem;
 }
 
@@ -6572,6 +6584,22 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 .owindow:has([id*=pagelinkwizard]) .title::before {
     content: var(--Page-link-wizard);
+}
+
+.owindow:has([class*=draft]) .title::before {
+    content: var(--draftExists);
+}
+
+.owindow:has([class*=draft]) .content::before {
+    font-size: .82rem;
+}
+
+.owindow:has([class*=edit-dr]) .content::before {
+    content: var(--draftOfThisPage);
+}
+
+.owindow:has([class*=leave-dr]) .content::before {
+    content: var(--youHaveSavedDraft);
 }
 
 .content:has(a[onclick*="scrollTo"])::before {
@@ -6644,12 +6672,12 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
     align-items: center;
 }
 
-div .btn.button-edit-original, div .btn.button-edit-draft {
+div .btn.button-edit-original, div .btn.button-edit-draft, div.owindow .button-cancel-and-delete-draft, div.owindow .button-cancel-and-leave-draft {
     font-size: 0;
     padding: .082rem .41rem;
 }
 
-.button-edit-original::after, .button-edit-draft::after {
+.button-edit-original::after, .button-edit-draft::after, .button-cancel-and-delete-draft::after, .button-cancel-and-leave-draft::after {
     content: var(--editOriginal);
     position: static;
     font-size: .82rem;
@@ -6658,4 +6686,12 @@ div .btn.button-edit-original, div .btn.button-edit-draft {
 
 .button-edit-draft::after {
     content: var(--editDraft);
+}
+
+.button-cancel-and-delete-draft::after {
+    content: var(--deleteDraft);
+}
+
+.button-cancel-and-leave-draft::after {
+    content: var(--leaveDraft);
 }
