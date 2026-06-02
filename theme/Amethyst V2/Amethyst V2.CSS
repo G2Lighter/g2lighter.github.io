@@ -6335,6 +6335,8 @@ textarea.form-control.form-wiki {
     --nodraft: 'No draft pages found.';
     --editOriginal: 'Edit Original';
     --editDraft: 'Edit Draft';
+    --deleteDraft: 'Cancel and Delete Draft';
+    --leaveDraft: 'Cancel and Leave Draft';
     --draftExists: 'Draft Exists';
     --youHaveSavedDraft: 'You have saved draft. Select one option';
     --draftOfThisPage: 'You have saved the draft of this page. Do you want to edit the draft? Please note that editing and saving the original will discard all changes saved in draft.';
@@ -6376,10 +6378,6 @@ textarea.form-control.form-wiki {
     --editDraft: '继承草稿';
     --deleteDraft: '退出并删除草稿';
     --leaveDraft: '退出并保留草稿';
-    --deleteDraft: 'Cancel and Delete Draft';
-    --leaveDraft: 'Cancel and Leave Draft';
-    --draftExists: 'Draft Exists';
-    --youHaveSavedDraft: 'You have saved draft. Select one option';
     --draftExists: '存在草稿';
     --youHaveSavedDraft: '你有已保存的草稿，请选择一个选项';
     --draftOfThisPage: '你已保存此页面的草稿。是否要编辑该草稿？请注意，编辑并保存原页面将会丢弃草稿中保存的所有更改。';
