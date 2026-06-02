@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.5.8 STABLE
+* 主题版本-Theme Version: v0.5.9 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.5.8 STABLE";
+    --version: "v0.5.9 STABLE";
     --theme-color: #9575ff;
     --accent-color: #2d2d2df0;
     --background-color: #1f1e1e;
@@ -2506,7 +2506,7 @@ table#odialog-box-container td div {
 
 .owindow .button-bar {
     text-align: right;
-    padding: .2em 1em;
+    padding: .15rem .82rem;
     margin: .5em;
 	font-size: 0;
 }
@@ -5955,7 +5955,7 @@ div .colmod-block.creditHorm .colmod-content {
             justify-content: center;
 }
 
-#who-rated-page-area * {
+#who-rated-page-area div {
     -webkit-column-count: 3;
        -moz-column-count: 3;
             column-count: 3;
@@ -6333,6 +6333,8 @@ textarea.form-control.form-wiki {
     --updatePagedList: '« previous';
     --updatePagedList-1: 'next »';
     --nodraft: 'No draft pages found.';
+    --editOriginal: 'Edit Original';
+    --editDraft: 'Edit Draft';
 }
 
 :root:lang(cn) {
@@ -6367,6 +6369,8 @@ textarea.form-control.form-wiki {
     --updatePagedList: '« 上一页';
     --updatePagedList-1: '下一页 »';
     --nodraft: '当前无草稿';
+    --editOriginal: '从原始状态编辑';
+    --editDraft: '继承草稿';
 }
 
 #rename-option-delete p {
@@ -6638,4 +6642,20 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
     height: 100%;
     box-sizing: border-box;
     align-items: center;
+}
+
+div .btn.button-edit-original, div .btn.button-edit-draft {
+    font-size: 0;
+    padding: .082rem .41rem;
+}
+
+.button-edit-original::after, .button-edit-draft::after {
+    content: var(--editOriginal);
+    position: static;
+    font-size: .82rem;
+    background: none;
+}
+
+.button-edit-draft::after {
+    content: var(--editDraft);
 }
