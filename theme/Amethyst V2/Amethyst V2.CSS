@@ -6291,6 +6291,7 @@ select,
 
 textarea.form-control.form-wiki {
     resize: vertical;
+	width: 100%;
 }
 
 .form-label::after {
