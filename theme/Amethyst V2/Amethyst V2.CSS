@@ -2508,6 +2508,7 @@ table#odialog-box-container td div {
     text-align: right;
     padding: .2em 1em;
     margin: .5em;
+	font-size: 0;
 }
 
 .owindow .button-bar input {
@@ -2520,6 +2521,7 @@ table#odialog-box-container td div {
     text-decoration: none;
     background-color: unset;
     border: unset;
+	font-size: .82rem;
 }
 .owindow .button-bar a:hover {
     background-color: #ddd;
