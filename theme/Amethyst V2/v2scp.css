@@ -276,3 +276,19 @@ body:has(.saving-page .collapsible-block-folded[style*="none"]) #odialog-contain
     background-color: purple;
     background-color: var(--theme-color);
 }
+@media only screen and (max-width: 1024px) {
+    #top-bar li ul::after {
+        display: none;
+    }
+    #top-bar li ul::before {
+        content: '';
+        width: 100%;
+        height: calc(var(--header-height) * 7);
+        position: sticky;
+        margin: -100%;
+        left: 0;
+        top: 0;
+        backdrop-filter: blur(3px);
+        z-index: -1;
+    }
+}
