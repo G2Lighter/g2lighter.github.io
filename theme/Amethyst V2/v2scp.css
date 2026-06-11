@@ -281,14 +281,9 @@ body:has(.saving-page .collapsible-block-folded[style*="none"]) #odialog-contain
         display: none;
     }
     #top-bar li ul::before {
-        content: '';
-        width: 100%;
-        height: calc(var(--header-height) * 7);
-        position: sticky;
-        margin: 0 0 -100%;
-        left: 0;
-        top: 0;
+        display: none;
+    }
+    #top-bar li ul {
         backdrop-filter: blur(3px);
-        z-index: -1;
     }
 }
