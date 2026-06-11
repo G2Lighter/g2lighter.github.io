@@ -284,6 +284,7 @@ body:has(.saving-page .collapsible-block-folded[style*="none"]) #odialog-contain
         display: none;
     }
     #top-bar li ul {
+        -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px);
     }
 }
