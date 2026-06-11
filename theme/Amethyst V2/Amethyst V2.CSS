@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.5.9 STABLE
+* 主题版本-Theme Version: v0.6.0 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,11 +10,11 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.5.9 STABLE";
+    --version: "v0.6.0 STABLE";
     --theme-color: #9575ff;
-    --accent-color: #2d2d2df0;
-    --background-color: #1f1e1e;
-    --text-color: #e5e5e5;
+    --accent-color: #2b2a2aeb;
+    --background-color: #1e1d1d;
+    --text-color: #ececec;
     --highlight-color: #fefefe;
     --visited-color: #8a6ff5;
     --shadow-color: #000;
@@ -33,6 +33,8 @@
     --header-height: 50px;
     --sidebar-width: 17em;
     --footer-height: var(--header-height);
+    --base-text: 14.5px;
+    --header-text: 13.5px;
     --scroll-width: .3em;
     --scroll-height: .5em;
     --basic-border: 1px solid var(--border);
@@ -43,6 +45,7 @@
     --sidebar: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPHBhdGggZD0iTTIwIDlMNCA5IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxwYXRoIGQ9Ik0xNSAxNUg0IiBzdHJva2U9IiMxQzI3NEMiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPg==);--login: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0idHJ1ZSIgaGVpZ2h0PSJ0cnVlIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgZmlsbD0ibm9uZSIgY2xhc3M9ImgtZnVsbCB3LWZ1bGwiIGlkPSJpY29uV2l0aEJhY2tncm91bmQiPjxyZWN0IGlkPSJyNCIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHg9IjAiIHk9IjAiIHJ4PSI4MCIgZmlsbD0iI2ZmZmZmZjAwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMCIgc3Ryb2tlLW9wYWNpdHk9IjEwMCUiIHBhaW50LW9yZGVyPSJzdHJva2UiLz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhckdyYWRpZW50LWljb25XaXRoQmFja2dyb3VuZCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIGdyYWRpZW50VHJhbnNmb3JtPSJyb3RhdGUoMCkiIHN0eWxlPSJ0cmFuc2Zvcm0tb3JpZ2luOmNlbnRlciBjZW50ZXIiPjxzdG9wIHN0b3AtY29sb3I9IiM4MDgwODAwMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzgwODA4MDAwIi8+PC9saW5lYXJHcmFkaWVudD48cmFkaWFsR3JhZGllbnQgaWQ9ImdsYXJlIiBjeD0iMCIgY3k9IjAiIHI9IjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiBncmFkaWVudFRyYW5zZm9ybT0idHJhbnNsYXRlKDI1Nikgcm90YXRlKDkwKSBzY2FsZSg1MTIpIj48c3RvcCBzdG9wLWNvbG9yPSJ3aGl0ZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0id2hpdGUiIHN0b3Atb3BhY2l0eT0iMCIvPjwvcmFkaWFsR3JhZGllbnQ+PGNsaXBQYXRoIGlkPSJjbGlwIj48dXNlIHhsaW5rOmhyZWY9IiNyNCIvPjwvY2xpcFBhdGg+PC9kZWZzPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzQwIiBoZWlnaHQ9IjM0MCIgdmlld0JveD0iMCAwIDE0IDE0IiB4PSI4NiIgeT0iODYiPjxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSI3IiBjeT0iMy43NSIgcj0iMy4yNSIvPjxwYXRoIGQ9Ik0xMy4xOCAxMy41YTYuNDkgNi40OSAwIDAgMC0xMi4zNiAwWiIvPjwvZz48L3N2Zz48L3N2Zz4=);
     color: var(--text-color);
     background-color: var(--background-color);
+    font-size: var(--base-text);
 }
 
 /* 前置 */
@@ -50,7 +53,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: verdana, arial, helvetica, sans-serif; /* general font settings */
-    font-size: .82em;
+    font-size: 1rem;
 }
 
 /* HEADINGS */
@@ -65,6 +68,7 @@ h6 {
     font-weight: bold;
     position: relative;
     padding: 0 0 0 .2em;
+    line-height: normal;
 }
 
 h1 {
@@ -96,9 +100,9 @@ h6 {
 .bibitems .title::before {
     content: "";
     color: transparent;
-    height: 100%;
-    left: -0.2em;
-    top: .1em;
+    height: 90%;
+    left: min(-0.25em, -5px);
+    top: 10%;
     display: block;
     background-color: var(--theme-color);
     -webkit-transform: matrix(1, .2, 0, 1, 0, 0);
@@ -216,6 +220,7 @@ a.newpage {
 #content-wrap {
     padding: 0;
     margin: 0;
+    line-height: 1.5;
 }
 
 /* fixes the peekaboo bug in most of the themes (ie6, ie7)*/
@@ -247,6 +252,7 @@ a.newpage {
     font-weight: bold;
     border-bottom: 1px solid #666;
     position: relative;
+    line-height: normal;
 }
 
 #page-title::before {
@@ -1742,6 +1748,8 @@ version: 2.3.1
 .yui-navset .yui-nav .selected,
 .yui-navset .yui-navset-top .yui-nav .selected {
     margin: 0; /* for overlap */
+    filter: brightness(.98);
+    z-index: 1;
 }
 
 .yui-navset .yui-nav a,
@@ -2521,7 +2529,7 @@ table#odialog-box-container td div {
     text-decoration: none;
     background-color: unset;
     border: unset;
-	font-size: .82rem;
+    font-size: .82rem: 1rem;
 }
 .owindow .button-bar a:hover {
     background-color: #ddd;
@@ -3312,6 +3320,7 @@ rt {
 
 pre, pre span {
     white-space: pre;
+    line-height: 1.2;
 }
 
 body {
@@ -3376,6 +3385,7 @@ textarea {
     width: 15em;
     line-height: 1rem;
     scrollbar-gutter: stable both-edges;
+    line-height: 1.2;
 }
 
 input {
@@ -3672,6 +3682,7 @@ blockquote,
     box-shadow: 0px 0px 5px -1px var(--shadow-color);
     padding-left: var(--header-height);
     z-index: 200;
+    font-size: var(--header-text);
 }
 
 #header * {
@@ -3781,7 +3792,8 @@ blockquote,
 }
 
 #header a,
-#header #top-bar a {
+#header #top-bar a,
+#header #top-bar ul>li li a {
     color: inherit;
     background-color: inherit;
     text-decoration: none;
@@ -4051,6 +4063,7 @@ blockquote,
             animation: notice 1s infinite;
     background-color: unset;
     border: solid var(--theme-color);
+    pointer-events: none;
 }
 
 @-webkit-keyframes notice {
@@ -4113,7 +4126,8 @@ blockquote,
 }
 
 #side-bar::before,
-#side-bar::after {
+#side-bar::after,
+#header::before {
     content: "";
     position: fixed;
     left: 0;
@@ -4124,9 +4138,11 @@ blockquote,
     transition: .2s .2s;
     pointer-events: all;
     z-index: 10;
+    image-rendering: crisp-edges;
 }
 
-#side-bar::after {
+#side-bar::after,
+#header::before {
     -webkit-mask-image: var(--sidebar);
             mask-image: var(--sidebar);
     -webkit-mask-size: 90%;
@@ -4176,7 +4192,7 @@ blockquote,
     padding-left: .5em;
     position: relative;
     z-index: 1;
-    font-size: .82rem;
+    font-size: 1rem;
     -webkit-transition: .2s;
     transition: .2s;
     color: var(--text-color);
@@ -4568,6 +4584,32 @@ rt {
 [style*="color: e"][style*="hovershow"] {
     -webkit-transition: .1s;
     transition: .1s;
+}
+
+#main-content div.title-1 > ::before {
+    display: none;
+}
+.title-1 > :is(h1, h2, h3, h4, h5, h6) {
+    padding: 0;
+}
+
+#main-content div.title-2 > ::before {
+    content: "";
+    -webkit-mask-image: none;
+    mask-image: none;
+    width: .2em;
+}
+
+#main-content div.title-3 > ::before {
+    -webkit-transform: none;
+    transform: none;
+    top: 16%;
+}
+
+#main-content div.title-3 > :target::before {
+    transform: matrix(4, 0, 0, 1, 0, 0);
+    -webkit-transform: matrix(4, 0, 0, 1, 0, 0);
+    top: 10%;
 }
 
 .hovershow:hover,
@@ -5211,7 +5253,9 @@ div.wiki-note {
 
 .footnote .f-footer,
 .equation .e-footer,
-.reference .r-footer {
+.reference .r-footer,
+ins br,
+del br {
     display: none;
 }
 
@@ -5551,7 +5595,7 @@ a[href*="/system:page-tags/tag/_"] {
 }
 
 .page-tags span::before {
-    content: "标签：";
+    content: var(--tag);
 }
 
 #breadcrumbs,
@@ -5966,7 +6010,7 @@ div .colmod-block.creditHorm .colmod-content {
     #header {
         height: calc(var(--header-height) * 2);
         grid:
-            "title a search user"
+            "title title search user"
             "tpb tpb tpb tpb";
         -ms-grid-columns: -webkit-max-content 1fr -webkit-max-content var(--header-height);
         -ms-grid-columns: max-content 1fr max-content var(--header-height);
@@ -5979,6 +6023,18 @@ div .colmod-block.creditHorm .colmod-content {
         z-index: 200;
     }
 
+    #header h1 {
+            -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(red), to(transparent));
+            -webkit-mask-image: -webkit-linear-gradient(left, red 0%, red -webkit-calc(100% - 1em), transparent 100%);
+                    mask-image: linear-gradient(90deg, red 0%, red -moz-calc(100% - 1em), transparent 100%);
+                    mask-image: -webkit-gradient(linear, left top, right top, from(red), color-stop(red), to(transparent));
+                    mask-image: linear-gradient(90deg, red 0%, red calc(100% - 1em), transparent 100%);
+    }
+
+    #top-bar {
+        max-width: calc(100vw - var(--header-height));
+    }
+
     #top-bar ul {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -5988,6 +6044,14 @@ div .colmod-block.creditHorm .colmod-content {
     #top-bar li > ul {
         left: 0;
         width: 100%;
+    }
+
+    #header #top-bar ul>li {
+        padding: 0 .3em;
+    }
+    
+    #header #top-bar ul>li li {
+        padding: 0 1em;
     }
 
     #header #top-bar li li:hover>ul {
@@ -6024,6 +6088,8 @@ div .colmod-block.creditHorm .colmod-content {
         min-width: -webkit-max-content;
         min-width: -moz-max-content;
         min-width: max-content;
+        padding: 0 .3em;
+        margin: 0 -.3em;
     }
     
     #account-options {
@@ -6085,7 +6151,7 @@ div .colmod-block.creditHorm .colmod-content {
         width: 20em;
     }
     
-    #side-bar::before, #side-bar::after {
+    #side-bar::before, #side-bar::after, #header::before {
         left: unset;
         right: 0;
         -webkit-transform: rotateX(180deg);
@@ -6097,7 +6163,7 @@ div .colmod-block.creditHorm .colmod-content {
         transition: .2s;
     }
 
-    #side-bar::after {
+    #side-bar::after, #header::before {
         rotate: 180deg;
     }
 
@@ -6340,6 +6406,7 @@ textarea.form-control.form-wiki {
     --draftExists: 'Draft Exists';
     --youHaveSavedDraft: 'You have saved draft. Select one option';
     --draftOfThisPage: 'You have saved the draft of this page. Do you want to edit the draft? Please note that editing and saving the original will discard all changes saved in draft.';
+    --tag: 'Page Tags:';
 }
 
 :root:lang(cn) {
@@ -6381,6 +6448,7 @@ textarea.form-control.form-wiki {
     --draftExists: '存在草稿';
     --youHaveSavedDraft: '你有已保存的草稿，请选择一个选项';
     --draftOfThisPage: '你已保存此页面的草稿。是否要编辑该草稿？请注意，编辑并保存原页面将会丢弃草稿中保存的所有更改。';
+    --tag: '标签：';
 }
 
 #rename-option-delete p {
@@ -6392,13 +6460,13 @@ textarea.form-control.form-wiki {
 
 #rename-option-delete p::before {
     content: var(--delete-1);
-    font-size: .82rem;
+    font-size: 1rem;
     color: var(--error-color);
 }
 
 #rename-option-delete p::after {
     content: var(--delete-2);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 #rename-option-delete .btn-danger {
@@ -6416,22 +6484,22 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 #st-wanted-pages-button::after {
     content: var(--wanted);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 #st-orphaned-pages-button::after {
     content: var(--orphaned);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 #st-draft-pages-button::after {
     content: var(--draft);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 #st-wanted-pages-button-hovertip .content::after {
     content: var(--wanted-tip);
-    font-size: .82rem;
+    font-size: 1rem;
     padding: .2em .5em;
 }
 
@@ -6443,7 +6511,7 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 #st-draft-pages-button-hovertip .content::after {
     content: var(--draft-tip);
-    font-size: .82rem;
+    font-size: 1rem;
     padding: .2em .5em;
 }
 
@@ -6462,18 +6530,18 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 #st-action-area:not(:has(.wanted-pages-module)) h1::after, #action-area:has(ul[style*="list-style: none"]) h1::after {
     content: var(--draft-h1);
-    font-size: 1.558rem;
+    font-size: 1.9rem;
     background: none;
 }
 
 #st-action-area:not(:has(.wanted-pages-module)) p::after {
     content: var(--draft-p);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 #st-action-area:not(:has(.wanted-pages-module)) p:last-child::after {
     content: var(--nodraft);
-    font-size: .82rem;
+    font-size: 1rem;
     font-style: italic;
 }
 
@@ -6497,7 +6565,7 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 .action-area-close.btn.btn-danger::after, #history-subarea .action-area-close::after {
     content: var(--close);
-    font-size: .82rem;
+    font-size: 1rem;
     position: static;
     z-index: 1;
     background: none;
@@ -6509,20 +6577,20 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 }
 
 #action-area:has(ul[style*="list-style: none"]) p::after {
-    font-size: .82rem;
+    font-size: 1rem;
     content: var(--watches-p);
 }
 
 #action-area:has(ul[style*="list-style: none"]) h1::after {
-    font-size: 1.558rem;
+    font-size: 1.9rem;
     content: var(--watches-h1);
 }
 
 .btn.button.button-close-window, .btn.button.button-cancel, .btn.button.button-insert-code, .owindow a.button-close-message {
     font-size: 0;
     --theme-color: var(--error-color);
-    outline-width: .082rem;
-    padding: .082rem .41rem;
+    outline-width: .1rem;
+    padding: .1rem .5rem;
 }
 
 .button-insert-code {
@@ -6531,7 +6599,7 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 .button-close-window::after, .button.button-cancel::after, .button-insert-code::after, .button-close-message::after {
     content: var(--close-window);
-    font-size: .82rem;
+    font-size: 1rem;
     transition: .2s;
     background: none;
     z-index: 1;
@@ -6561,7 +6629,7 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 }
 
 .owindow:has([id*=wizard]) .title::before, .owindow:has([class*=draft]) .title::before {
-    font-size: .984rem;
+    font-size: 1.2rem;
 }
 
 .owindow:has([id*=imagewizard]) .title::before {
@@ -6589,7 +6657,7 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 }
 
 .owindow:has([class*=draft]) .content::before {
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 .owindow:has([class*=edit-dr]) .content::before {
@@ -6602,12 +6670,12 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 .content:has(a[onclick*="scrollTo"])::before {
     content: var(--scrollToText);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 .content a[onclick*="scrollTo"]::before {
     content: var(--scrollTo);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 #thread-toggle-options {
@@ -6618,7 +6686,7 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 #thread-toggle-options::after {
     content: var(--toggleThreadOptions);
-    font-size: .82rem;
+    font-size: 1rem;
     z-index: 1;
     background: none;
     position: static;
@@ -6627,17 +6695,17 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 .target:last-child a, .target:nth-child(2) a {
     font-size: 0;
-    padding: .246rem .82rem;
+    padding: .3rem 1rem;
 }
 
 .target:nth-child(2) a::after, .current:nth-child(2)::before {
     content: var(--updatePagedList);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 .target:last-child a::after {
     content: var(--updatePagedList-1);
-    font-size: .82rem;
+    font-size: 1rem;
 }
 
 .pager .current:nth-child(2) {
@@ -6652,7 +6720,7 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 .current:nth-child(2)::before {
     color: var(--theme-color);
-    padding: .246rem .82rem;
+    padding: .3rem 1rem;
     opacity: .7;
     cursor: not-allowed;
     font-weight: normal;
@@ -6660,10 +6728,10 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 .current:nth-child(2):after {
     content: '1';
-    padding: .246rem .82rem;
+    padding: .3rem 1rem;
     background-color: var(--accent-color);
     color: var(--highlight-color);
-    font-size: .82rem;
+    font-size: 1rem;
     display: flex;
     height: 100%;
     box-sizing: border-box;
@@ -6672,13 +6740,13 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
 
 div .btn.button-edit-original, div .btn.button-edit-draft, div.owindow .button-cancel-and-delete-draft, div.owindow .button-cancel-and-leave-draft {
     font-size: 0;
-    padding: .082rem .41rem;
+    padding: .1rem .5rem;
 }
 
 .button-edit-original::after, .button-edit-draft::after, .button-cancel-and-delete-draft::after, .button-cancel-and-leave-draft::after {
     content: var(--editOriginal);
     position: static;
-    font-size: .82rem;
+    font-size: 1rem;
     background: none;
 }
 
