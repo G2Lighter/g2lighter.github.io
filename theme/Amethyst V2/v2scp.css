@@ -285,7 +285,7 @@ body:has(.saving-page .collapsible-block-folded[style*="none"]) #odialog-contain
         width: 100%;
         height: calc(var(--header-height) * 7);
         position: sticky;
-        margin: -100%;
+        margin: 0 0 -100%;
         left: 0;
         top: 0;
         backdrop-filter: blur(3px);
