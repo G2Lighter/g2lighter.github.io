@@ -6072,9 +6072,9 @@ div .colmod-block.creditHorm .colmod-content {
     
     #header #top-bar li {
         position: static;
-        -webkit-box-flex: 1;
-            -ms-flex: 1;
-                flex: 1;
+        -webkit-box-flex: 1 0 max-content;
+            -ms-flex: 1 0 max-content;
+                flex: 1 0 max-content;
     }
     
     #top-bar li li > ul {
