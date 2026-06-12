@@ -6247,6 +6247,7 @@ div .colmod-block.creditHorm .colmod-content {
     width: 100%;
     text-align: center;
     background: none;
+	font-size: 1rem;
 }
 
 .owindow .btn.btn-danger[onclick*="cleanAll"]::after {
