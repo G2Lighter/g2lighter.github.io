@@ -2060,7 +2060,7 @@ version: 2.3.1
 }
 
 .forum-group table td.last {
-    width: 17em;
+    width: unset;
     font-size: 85%;
     text-align: center;
 }
@@ -6214,7 +6214,7 @@ div .colmod-block.creditHorm .colmod-content {
         text-align: center;
     }
 
-    blockquote, .blockquote {
+    blockquote, .blockquote, .forum-thread-box .description-block {
         margin: 1em;
     }
 
