@@ -140,7 +140,7 @@ h6 {
     background: var(--dim-text-color);
     height: 1px;
     width: 100%;
-    margin: 0 .2em;
+    margin: 0 0 0 .2em;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -3565,7 +3565,7 @@ a.action-area-close {
     z-index: 1;
     position: relative;
     float: right;
-    margin: .3rem 0;
+    margin: .3rem 0 .3rem .3rem;
     font-size: 95%;
     padding: .3em .7em;
 }
