@@ -6327,7 +6327,7 @@ div .colmod-block.creditHorm .colmod-content {
 :open::picker(select) {
     opacity: 1;
     height: max-content;
-    max-height: 7rem;
+    max-height: 10rem;
     @starting-style {
         opacity: 0;
         max-height: 0;
