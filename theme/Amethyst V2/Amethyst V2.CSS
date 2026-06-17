@@ -6364,6 +6364,10 @@ textarea.form-control.form-wiki {
     content: '：';
 }
 
+.admins-only, li.admins-only {
+    display: none;
+}
+
 /* 翻译测试 */
 :root {
     --cleanAll: '(Click to close)';
