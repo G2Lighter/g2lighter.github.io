@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.6.0 STABLE
+* 主题版本-Theme Version: v0.6.1 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.6.0 STABLE";
+    --version: "v0.6.1 STABLE";
     --theme-color: #9575ff;
     --accent-color: #1d1d1deb;
     --background-color: #161616;
@@ -2530,7 +2530,7 @@ table#odialog-box-container td div {
     text-decoration: none;
     background-color: unset;
     border: unset;
-    font-size: .82rem: 1rem;
+    font-size: 1rem;
 }
 .owindow .button-bar a:hover {
     background-color: #ddd;
@@ -3552,14 +3552,14 @@ option:hover {
 a.action-area-close, a[onclick*="showWho"] {
     display: inline-block;
     border: var(--basic-border);
-    outline: .1em solid transparent;
+    outline: .1rem solid transparent;
     background: var(--accent-color);
     color: var(--text-color);
     position: relative;
     -webkit-transition: .2s;
     transition: .2s;
     isolation: isolate;
-    padding: .1em .5em;
+    padding: .1rem .5rem;
 }
 
 a.action-area-close {
@@ -6370,8 +6370,7 @@ textarea.form-control.form-wiki {
     display: none;
 }
 
-/* 翻译测试 */
-:root {
+Minified CSS Source map Restructure Beautify:root {
     --cleanAll: '(Click to close)';
     --delete-1: 'Warning: ';
     --delete-2: 'This will permanently remove this page from the website, and it will be impossible to recover the data. Are you sure you want to do this?';
@@ -6411,6 +6410,13 @@ textarea.form-control.form-wiki {
     --youHaveSavedDraft: 'You have saved draft. Select one option';
     --draftOfThisPage: 'You have saved the draft of this page. Do you want to edit the draft? Please note that editing and saving the original will discard all changes saved in draft.';
     --tag: 'Page Tags:';
+    --confirmation: 'Confirmation';
+    --revertH1: 'Revert page revision?';
+    --revertP1-1: 'Are you sure you want to revert page version to revision number ';
+    --revertP1-2: '.?';
+    --revertP2: 'This would affect only the title of the page and/or source but not any files attachment, page name or other metadata.';
+    --revertP3: 'If you say "yes" a new revision will be created and title and source of the revision 20. will be copied.';
+    --revert: 'yes, revert'
 }
 
 :root:lang(cn) {
@@ -6453,273 +6459,265 @@ textarea.form-control.form-wiki {
     --youHaveSavedDraft: '你有已保存的草稿，请选择一个选项';
     --draftOfThisPage: '你已保存此页面的草稿。是否要编辑该草稿？请注意，编辑并保存原页面将会丢弃草稿中保存的所有更改。';
     --tag: '标签：';
+    --confirmation: '回退确认';
+    --revertH1: '回退页面版本？';
+    --revertP1-1: '您确定要将页面版本回退到版本号 ';
+    --revertP1-2: ' 所对应的版本？';
+    --revertP2: '此操作仅影响页面标题和/或源代码，不会影响其附件、地址或其他元数据。';
+    --revertP3: '如果您选择“回退”，将创建一个新版本，并在该版本中应用对应版本的标题和源代码。';
+    --revert: '回退'
 }
 
 #rename-option-delete p {
     font-size: 0;
     text-align: center;
     font-style: italic;
-    font-weight: bold;
+    font-weight: 700
 }
 
 #rename-option-delete p::before {
     content: var(--delete-1);
     font-size: 1rem;
-    color: var(--error-color);
+    color: var(--error-color)
 }
 
 #rename-option-delete p::after {
     content: var(--delete-2);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 #rename-option-delete .btn-danger {
-    --error-color: var(--text-color);
+    --error-color: var(--text-color)
 }
 
 #rename-option-delete .btn-primary {
-    --green: var(--error-color);
+    --green: var(--error-color)
 }
 
-a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-button, #st-draft-pages-button, #st-wanted-pages-button-hovertip .content, #st-orphaned-pages-button-hovertip .content, #st-draft-pages-button-hovertip .content, #history-subarea .action-area-close {
+#history-subarea .action-area-close,
+#st-draft-pages-button,
+#st-draft-pages-button-hovertip .content,
+#st-orphaned-pages-button,
+#st-orphaned-pages-button-hovertip .content,
+#st-wanted-pages-button,
+#st-wanted-pages-button-hovertip .content,
+a.action-area-close.btn.btn-danger {
     font-size: 0;
-    padding: .21rem .5rem;
+    padding: .21rem .5rem
 }
 
 #st-wanted-pages-button::after {
     content: var(--wanted);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 #st-orphaned-pages-button::after {
     content: var(--orphaned);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 #st-draft-pages-button::after {
     content: var(--draft);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 #st-wanted-pages-button-hovertip .content::after {
     content: var(--wanted-tip);
     font-size: 1rem;
-    padding: .2em .5em;
+    padding: .2em .5em
 }
 
 #st-orphaned-pages-button-hovertip .content::after {
     content: var(--orphaned-tip);
     font-size: .82rem;
-    padding: .2em .5em;
+    padding: .2em .5em
 }
 
 #st-draft-pages-button-hovertip .content::after {
     content: var(--draft-tip);
     font-size: 1rem;
-    padding: .2em .5em;
+    padding: .2em .5em
 }
 
-#st-action-area h1::before, #action-area:has(ul[style*="list-style: none"]) h1::before {
-    left: -0.2rem;
+#action-area:has(ul[style*="list-style: none"]) h1::before,
+#st-action-area h1::before {
+    left: -.2rem;
     top: .1rem;
-    width: .3rem;
+    width: .3rem
 }
 
-#st-action-area:not(:has(.wanted-pages-module)) h1, #st-action-area:not(:has(.wanted-pages-module)) p {
+#st-action-area:not(:has(.wanted-pages-module)) h1,
+#st-action-area:not(:has(.wanted-pages-module)) p {
     font-size: 0;
     display: block;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box
 }
 
-#st-action-area:not(:has(.wanted-pages-module)) h1::after, #action-area:has(ul[style*="list-style: none"]) h1::after {
+#action-area:has(ul[style*="list-style: none"]) h1::after,
+#st-action-area:not(:has(.wanted-pages-module)) h1::after {
     content: var(--draft-h1);
     font-size: 1.9rem;
-    background: none;
+    background: 0 0
 }
 
 #st-action-area:not(:has(.wanted-pages-module)) p::after {
     content: var(--draft-p);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 #st-action-area:not(:has(.wanted-pages-module)) p:last-child::after {
     content: var(--nodraft);
     font-size: 1rem;
-    font-style: italic;
+    font-style: italic
 }
 
 #st-action-area:not(:has(.wanted-pages-module)) {
-    float: left;
+    float: left
 }
 
 #st-action-area:not(:has(.wanted-pages-module)):has(span) h1::after {
-    content: var(--orphaned-h1);
+    content: var(--orphaned-h1)
 }
 
 #st-action-area:not(:has(.wanted-pages-module)):has(span) p::after {
-    content: var(--orphaned-p);
+    content: var(--orphaned-p)
 }
 
 .action-area-close.btn.btn-danger {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
+    display: flex
 }
 
-.action-area-close.btn.btn-danger::after, #history-subarea .action-area-close::after {
+#history-subarea .action-area-close::after,
+.action-area-close.btn.btn-danger::after {
     content: var(--close);
     font-size: 1rem;
     position: static;
     z-index: 1;
-    background: none;
+    background: 0 0
 }
 
-#action-area:has(ul[style*="list-style: none"]) p, #action-area:has(ul[style*="list-style: none"]) h1 {
+#action-area:has(ul[style*="list-style: none"]) h1,
+#action-area:has(ul[style*="list-style: none"]) p {
     font-size: 0;
-    display: block;
+    display: block
 }
 
 #action-area:has(ul[style*="list-style: none"]) p::after {
     font-size: 1rem;
-    content: var(--watches-p);
+    content: var(--watches-p)
 }
 
 #action-area:has(ul[style*="list-style: none"]) h1::after {
     font-size: 1.9rem;
-    content: var(--watches-h1);
-}
-
-.btn.button.button-close-window, .btn.button.button-cancel, .btn.button.button-insert-code, .owindow a.button-close-message {
-    font-size: 0;
-    --theme-color: var(--error-color);
-    outline-width: .1rem;
-    padding: .1rem .5rem;
+    content: var(--watches-h1)
 }
 
 .button-insert-code {
-    --theme-color: var(--green);
+    --theme-color: var(--green)
 }
 
-.button-close-window::after, .button.button-cancel::after, .button-insert-code::after, .button-close-message::after {
-    content: var(--close-window);
-    font-size: 1rem;
-    transition: .2s;
-    background: none;
-    z-index: 1;
-    color: var(--error-color);
-    position: static;
+.content a[onclick*=scrollTo],
+.content:has(a[onclick*=scrollTo]),
+.owindow:has([class*=draft]) .content,
+.owindow:has([class*=draft]) .title,
+.owindow:has([id*=wizard]) .title {
+    font-size: 0
 }
 
-.button.button-cancel::after {
-    content: var(--cancel);
-}
-
-.button-insert-code::after {
-    content: var(--insert-code);
-    color: var(--green);
-}
-
-.button-close-message::after {
-    content: var(--close-message);
-}
-
-.button-close-window:hover::after, .button.button-cancel:hover::after, .button-insert-code:hover::after, .button-close-message:hover::after {
-    color: var(--highlight-color);
-}
-
-.owindow:has([id*=wizard]) .title, .content:has(a[onclick*="scrollTo"]), .content a[onclick*="scrollTo"], .owindow:has([class*=draft]) .title, .owindow:has([class*=draft]) .content {
-    font-size: 0;
-}
-
-.owindow:has([id*=wizard]) .title::before, .owindow:has([class*=draft]) .title::before {
-    font-size: 1.2rem;
+.owindow:has([class*=draft]) .title::before,
+.owindow:has([id*=wizard]) .title::before {
+    font-size: 1.2rem
 }
 
 .owindow:has([id*=imagewizard]) .title::before {
-    content: var(--Image-wizard);
+    content: var(--Image-wizard)
 }
 
 .owindow:has([id*=codewizard]) .title::before {
-    content: var(--Code-block-wizard);
+    content: var(--Code-block-wizard)
 }
 
 .owindow:has([id*=uriwizard]) .title::before {
-    content: var(--URL-link-wizard);
+    content: var(--URL-link-wizard)
 }
 
 .owindow:has([id*=tablewizard]) .title::before {
-    content: var(--Table-wizard);
+    content: var(--Table-wizard)
 }
 
 .owindow:has([id*=pagelinkwizard]) .title::before {
-    content: var(--Page-link-wizard);
+    content: var(--Page-link-wizard)
 }
 
 .owindow:has([class*=draft]) .title::before {
-    content: var(--draftExists);
+    content: var(--draftExists)
 }
 
-.owindow:has([class*=draft]) .content::before {
-    font-size: 1rem;
+.owindow:has([class*=draft]) .content::before,
+.owindow:has([class*=revert]) strong {
+    font-size: 1rem
 }
 
 .owindow:has([class*=edit-dr]) .content::before {
-    content: var(--draftOfThisPage);
+    content: var(--draftOfThisPage)
 }
 
 .owindow:has([class*=leave-dr]) .content::before {
-    content: var(--youHaveSavedDraft);
+    content: var(--youHaveSavedDraft)
 }
 
-.content:has(a[onclick*="scrollTo"])::before {
+.content:has(a[onclick*=scrollTo])::before {
     content: var(--scrollToText);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
-.content a[onclick*="scrollTo"]::before {
+.content a[onclick*=scrollTo]::before {
     content: var(--scrollTo);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 #thread-toggle-options {
     font-size: 0;
     padding: .1rem .5rem;
-    outline-width: .1rem;
+    outline-width: .1rem
 }
 
 #thread-toggle-options::after {
     content: var(--toggleThreadOptions);
     font-size: 1rem;
     z-index: 1;
-    background: none;
-    position: static;
+    background: 0 0;
+    position: static
 }
 
-
-.target:last-child a, .target:nth-child(2) a {
+.target:last-child a,
+.target:nth-child(2) a {
     font-size: 0;
-    padding: .3rem 1rem;
+    padding: .3rem 1rem
 }
 
-.target:nth-child(2) a::after, .current:nth-child(2)::before {
+.current:nth-child(2)::before,
+.target:nth-child(2) a::after {
     content: var(--updatePagedList);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 .target:last-child a::after {
     content: var(--updatePagedList-1);
-    font-size: 1rem;
+    font-size: 1rem
 }
 
 .pager .current:nth-child(2) {
     padding: 0;
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
     background-color: unset;
     color: var(--highlight-color);
-    border: none;
-    font-size: 0;
+    border: 0;
+    font-size: 0
 }
 
 .current:nth-child(2)::before {
@@ -6727,11 +6725,11 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
     padding: .3rem 1rem;
     opacity: .7;
     cursor: not-allowed;
-    font-weight: normal;
+    font-weight: 400
 }
 
 .current:nth-child(2):after {
-    content: '1';
+    content: "1";
     padding: .3rem 1rem;
     background-color: var(--accent-color);
     color: var(--highlight-color);
@@ -6739,29 +6737,142 @@ a.action-area-close.btn.btn-danger, #st-wanted-pages-button, #st-orphaned-pages-
     display: flex;
     height: 100%;
     box-sizing: border-box;
-    align-items: center;
+    align-items: center
 }
 
-div .btn.button-edit-original, div .btn.button-edit-draft, div.owindow .button-cancel-and-delete-draft, div.owindow .button-cancel-and-leave-draft {
+div .btn.button-edit-draft,
+div .btn.button-edit-original,
+div.owindow .button-cancel-and-delete-draft,
+div.owindow .button-cancel-and-leave-draft {
     font-size: 0;
-    padding: .1rem .5rem;
+    padding: .1rem .5rem
 }
 
-.button-edit-original::after, .button-edit-draft::after, .button-cancel-and-delete-draft::after, .button-cancel-and-leave-draft::after {
-    content: var(--editOriginal);
+.button-edit-original::after {
+    content: var(--editOriginal)
+}
+
+.button-cancel-and-delete-draft::after,
+.button-cancel-and-leave-draft::after,
+.button-edit-draft::after,
+.button-edit-original::after,
+a.btn.button-yes\,-revert::after {
     position: static;
     font-size: 1rem;
-    background: none;
+    background: 0 0
 }
 
 .button-edit-draft::after {
-    content: var(--editDraft);
+    content: var(--editDraft)
 }
 
 .button-cancel-and-delete-draft::after {
-    content: var(--deleteDraft);
+    content: var(--deleteDraft)
 }
 
 .button-cancel-and-leave-draft::after {
-    content: var(--leaveDraft);
+    content: var(--leaveDraft)
+}
+
+.btn.button.button-cancel,
+.btn.button.button-close-window,
+.btn.button.button-insert-code,
+.owindow a.button-close-message,
+a.btn.button-yes\,-revert {
+    font-size: 0;
+    --theme-color: var(--error-color);
+    outline-width: .1rem;
+    padding: .1rem .5rem
+}
+
+.btn,
+.change-textarea-size a,
+.owindow .button-bar a,
+a.action-area-close,
+a.button,
+a[onclick*=delete],
+a[onclick*=showWho],
+button,
+div.buttons input,
+file,
+input.button {
+    display: inline-block;
+    border: var(--basic-border);
+    outline: .1rem solid transparent;
+    background: var(--accent-color);
+    color: var(--text-color);
+    position: relative;
+    -webkit-transition: .2s;
+    transition: .2s;
+    isolation: isolate;
+    padding: .1rem .5rem
+}
+
+a.btn.button-yes\,-revert::after {
+    transition: .2s;
+    z-index: 1;
+    content: var(--revert);
+    color: var(--green)
+}
+
+.button-close-message::after,
+.button-close-window::after,
+.button-insert-code::after,
+.button.button-cancel::after {
+    content: var(--close-window);
+    font-size: 1rem;
+    transition: .2s;
+    background: 0 0;
+    z-index: 1;
+    color: var(--error-color);
+    position: static
+}
+
+.button-close-message:hover::after,
+.button-close-window:hover::after,
+.button-insert-code:hover::after,
+.button.button-cancel:hover::after,
+a.btn.button-yes\,-revert:hover::after {
+    color: var(--highlight-color)
+}
+
+a.btn.button-yes\,-revert {
+    --theme-color: var(--green)
+}
+
+.owindow:has([class*=revert]) :is(h1, p, .title) {
+    font-size: 0
+}
+
+.owindow:has([class*=revert]) .title::after {
+    content: var(--confirmation);
+    font-size: 1.2rem
+}
+
+.owindow:has([class*=revert]) h1::after {
+    content: var(--revertH1);
+    font-size: 1.9rem;
+    padding: 0 0 0 .2em
+}
+
+.owindow:has([class*=revert]) p {
+    margin: 1rem 0
+}
+
+.owindow:has([class*=revert]) p:first-of-type::before {
+    content: var(--revertP1-1);
+    font-size: 1rem
+}
+
+.owindow:has([class*=revert]) p::after {
+    content: var(--revertP1-2);
+    font-size: 1rem
+}
+
+.owindow:has([class*=revert]) p:nth-of-type(2)::after {
+    content: var(--revertP2)
+}
+
+.owindow:has([class*=revert]) p:nth-of-type(3)::after {
+    content: var(--revertP3)
 }
