@@ -2150,6 +2150,7 @@ version: 2.3.1
 .forum-category-box .pager {
     margin: 1em 0;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 /* new thread */
