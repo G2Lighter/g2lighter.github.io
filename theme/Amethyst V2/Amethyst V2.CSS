@@ -5553,6 +5553,7 @@ table.form td:last-child {
     z-index: 1;
     border: var(--basic-border);
     border-color: var(--light-theme-color);
+    transition: .2s;
 }
 
 #breadcrumbs a:not(:first-child) {
