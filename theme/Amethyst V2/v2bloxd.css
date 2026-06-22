@@ -9,7 +9,7 @@
 
 /* 亮色模式 - 启用春节时需禁用 */
 :root {
-    --theme-color: #8969ff;
+    --theme-color: #9575ff;
     --accent-color: #fdfdfdf0;
     --background-color: #fcfcfc;
     --text-color: #000000;
