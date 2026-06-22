@@ -3321,7 +3321,7 @@ rt {
 
 pre, pre span, code {
     white-space: pre;
-    line-height: 1;
+    line-height: 1.2;
 }
 
 body {
