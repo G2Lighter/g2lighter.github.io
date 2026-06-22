@@ -3608,6 +3608,8 @@ a[onclick*="showWho"]:hover {
     background: var(--theme-color);
     color: var(--highlight-color);
     text-decoration: none;
+    border-color: var(--theme-color);
+    outline-color: var(--theme-color);
 }
 
 .btn::before,
@@ -6800,7 +6802,6 @@ input.button {
     border: var(--basic-border);
     outline: .1rem solid transparent;
     background: var(--accent-color);
-    color: var(--text-color);
     position: relative;
     -webkit-transition: .2s;
     transition: .2s;
