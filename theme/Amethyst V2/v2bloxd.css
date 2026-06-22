@@ -9,12 +9,12 @@
 
 /* 亮色模式 - 启用春节时需禁用 */
 :root {
-    --theme-color: #9575ff;
+    --theme-color: #8969ff;
     --accent-color: #fdfdfdf0;
     --background-color: #fcfcfc;
     --text-color: #000000;
     --highlight-color: #fefefe;
-    --visited-color: #6943f4;
+    --visited-color: #4b1aff;
     --shadow-color: #c5c5c5;
     --unexist-color: #6c6c6c;
     --reverse-text-color: var(--highlight-color);
@@ -26,7 +26,11 @@
     --green: #44ae44;
     --error-color: #d04f4f;
     --border: #c2c2c2;
-    --basic-border: 1px solid var(--border);
+    --link-color: #6d46ff;
+}
+
+a {
+    color: var(--link-color);
 }
 
 div .page-rate-widget-box .rate-points {
