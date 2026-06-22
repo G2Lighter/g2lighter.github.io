@@ -3319,9 +3319,9 @@ rt {
     white-space: nowrap;
 }
 
-pre, pre span {
+pre, pre span, code {
     white-space: pre;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 body {
