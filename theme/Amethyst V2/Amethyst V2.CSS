@@ -3803,6 +3803,7 @@ blockquote,
     padding: 0 1em;
     margin: 0 -1em;
     max-height: var(--header-height);
+	border: none;
 }
 
 #top-bar li:hover {
