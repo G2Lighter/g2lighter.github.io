@@ -6003,6 +6003,8 @@ div .colmod-block.creditHorm .colmod-content {
 #who-rated-page-area span {
     flex: 0 0 1em;
     text-align: center;
+    line-height: 1.3;
+    transition: .2s;
 }
 
 #who-rated-page-area .printuser {
@@ -6020,8 +6022,12 @@ div .colmod-block.creditHorm .colmod-content {
     transition: .2s;
 }
 
-#who-rated-page-area .printuser:hover::after {
+#who-rated-page-area .printuser:hover::after, #who-rated-page-area :has(+ span:hover)::after {
     opacity: 1;
+}
+
+#who-rated-page-area span:hover + span, #who-rated-page-area span:nth-child(3n-1):hover {
+    filter: brightness(1.5);
 }
 
 /* 移动端适配 */
