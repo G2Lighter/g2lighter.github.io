@@ -2485,6 +2485,7 @@ table#odialog-box-container td div {
             box-shadow: 0px 2px 10px -2px var(--shadow-color);
 	max-width: 95%;
 	max-height: 90%;
+	overflow: auto;
 }
 
 .owindow .close {
@@ -2513,6 +2514,7 @@ table#odialog-box-container td div {
 
 .owindow .content {
     padding: .5rem 1rem;
+	overflow: auto;
 }
 
 .owindow .button-bar {
