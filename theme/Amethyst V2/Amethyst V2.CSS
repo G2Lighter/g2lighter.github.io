@@ -6006,7 +6006,7 @@ div .colmod-block.creditHorm .colmod-content {
 }
 
 #who-rated-page-area .printuser {
-    flex: 1 0 min(calc(40% + 1em), 15em);
+    flex: 1 0 min(50%, 15em);
     display: flex;
     align-items: center;
 }
