@@ -6788,28 +6788,6 @@ a.btn.button-yes\,-revert {
     padding: .1rem .5rem
 }
 
-.btn,
-.change-textarea-size a,
-.owindow .button-bar a,
-a.action-area-close,
-a.button,
-a[onclick*=delete],
-a[onclick*=showWho],
-button,
-div.buttons input,
-file,
-input.button {
-    display: inline-block;
-    border: var(--basic-border);
-    outline: .1rem solid transparent;
-    background: var(--accent-color);
-    position: relative;
-    -webkit-transition: .2s;
-    transition: .2s;
-    isolation: isolate;
-    padding: .1rem .5rem
-}
-
 a.btn.button-yes\,-revert::after {
     transition: .2s;
     z-index: 1;
