@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.6.1 STABLE
+* 主题版本-Theme Version: v0.6.2 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.6.1 STABLE";
+    --version: "v0.6.2 STABLE";
     --theme-color: #9575ff;
     --accent-color: #1d1d1deb;
     --background-color: #161616;
@@ -5994,9 +5994,32 @@ div .colmod-block.creditHorm .colmod-content {
 }
 
 #who-rated-page-area div {
-    -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#who-rated-page-area span {
+    flex: 0 0 1em;
+    text-align: center;
+}
+
+#who-rated-page-area .printuser {
+    flex: 1 0 min(calc(40% + 1em), 15em);
+    display: flex;
+    align-items: center;
+}
+
+#who-rated-page-area .printuser::after {
+    content: '';
+    border: var(--basic-border);
+    flex: 1;
+    margin: 0 .3em 0 .5em;
+    opacity: .2;
+    transition: .2s;
+}
+
+#who-rated-page-area .printuser:hover::after {
+    opacity: 1;
 }
 
 /* 移动端适配 */
