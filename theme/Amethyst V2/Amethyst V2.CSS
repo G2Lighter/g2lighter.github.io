@@ -2514,7 +2514,11 @@ table#odialog-box-container td div {
 
 .owindow .content {
     padding: .5rem 1rem;
-	overflow: auto;
+    overflow: hidden;
+}
+
+.owindow .content:has(*) {
+    overflow: auto;
 }
 
 .owindow .button-bar {
