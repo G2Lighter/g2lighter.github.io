@@ -2483,6 +2483,8 @@ table#odialog-box-container td div {
     margin: auto;
     -webkit-box-shadow: 0px 2px 10px -2px var(--shadow-color);
             box-shadow: 0px 2px 10px -2px var(--shadow-color);
+	max-width: 95%;
+	max-height: 90%;
 }
 
 .owindow .close {
@@ -5349,20 +5351,6 @@ table.form td:last-child {
     display: -ms-grid;
     display: grid;
     grid: "a" "b";
-}
-
-#history-form-1 td:last-child {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    width: 100%;
-    text-align: center;
-    grid-area: b;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
 }
 
 #action-area td {
