@@ -6396,7 +6396,7 @@ textarea.form-control.form-wiki {
     display: none;
 }
 
-Minified CSS Source map Restructure Beautify:root {
+:root {
     --cleanAll: '(Click to close)';
     --delete-1: 'Warning: ';
     --delete-2: 'This will permanently remove this page from the website, and it will be impossible to recover the data. Are you sure you want to do this?';
