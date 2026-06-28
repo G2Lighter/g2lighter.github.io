@@ -2468,6 +2468,10 @@ table#odialog-box-container td div {
     width: 100%;
 }
 
+#odialog-hovertips {
+    z-index: auto !important;
+}
+
 #odialog-container[style*="k"] {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
@@ -2713,7 +2717,7 @@ table#odialog-box-container td div {
 }
 
 .hovertip .content {
-    padding: .2em .5em;
+    padding: .2rem .5rem;
 }
 
 /* JQUERY LIGHTBOX */
@@ -5250,6 +5254,10 @@ div.wiki-note {
     background: var(--accent-color);
 }
 
+#auser-abuse-report-button-hovertip {
+    z-index: 600;
+}
+
 .footnote .f-heading,
 .equation .e-heading,
 .reference .r-heading {
@@ -6396,6 +6404,7 @@ textarea.form-control.form-wiki {
     display: none;
 }
 
+
 :root {
     --cleanAll: '(Click to close)';
     --delete-1: 'Warning: ';
@@ -6442,7 +6451,9 @@ textarea.form-control.form-wiki {
     --revertP1-2: '.?';
     --revertP2: 'This would affect only the title of the page and/or source but not any files attachment, page name or other metadata.';
     --revertP3: 'If you say "yes" a new revision will be created and title and source of the revision 20. will be copied.';
-    --revert: 'yes, revert'
+    --revert: 'yes, revert';
+    --permissonError: 'Permission error';
+    --pleaseNote: 'Please note:';
 }
 
 :root:lang(cn) {
@@ -6491,7 +6502,9 @@ textarea.form-control.form-wiki {
     --revertP1-2: ' 所对应的版本？';
     --revertP2: '此操作仅影响页面标题和/或源代码，不会影响其附件、地址或其他元数据。';
     --revertP3: '如果您选择“回退”，将创建一个新版本，并在该版本中应用对应版本的标题和源代码。';
-    --revert: '回退'
+    --revert: '回退';
+    --permissonError: '权限错误';
+    --pleaseNote: '请注意：';
 }
 
 #rename-option-delete p {
@@ -6649,8 +6662,24 @@ a.action-area-close.btn.btn-danger {
 .content:has(a[onclick*=scrollTo]),
 .owindow:has([class*=draft]) .content,
 .owindow:has([class*=draft]) .title,
-.owindow:has([id*=wizard]) .title {
+.owindow:has([id*=wizard]) .title,
+.owindow:has([href="#action:login"]) .title {
     font-size: 0
+}
+
+.owindow:has([href="#action:login"]) .title::after {
+    font-size: 1.2rem;
+    content: var(--permissonError);
+}
+
+.owindow:has([href="#action:login"]) h1 {
+    font-size: 0;
+    margin: 1.1rem 0
+}
+.owindow:has([href="#action:login"]) h1::after {
+    font-size: 1.9rem;
+    content: var(--pleaseNote);
+    padding: 0 0 0 .2em;
 }
 
 .owindow:has([class*=draft]) .title::before,
@@ -6878,4 +6907,3 @@ a.btn.button-yes\,-revert {
 
 .owindow:has([class*=revert]) p:nth-of-type(3)::after {
     content: var(--revertP3)
-}
