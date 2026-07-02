@@ -146,10 +146,9 @@ table.page-history td.optionstd a {
     :root {
         --theme-color: #9575ff;
         --visited-color: #8a6ff5;
-        --accent-color: #2d2d2df0;
-        --background-color: #1f1e1e;
-        --text-color: #e5e5e5;
-        --visited-color: #6943f4;
+        --accent-color: #1d1d1deb;
+        --background-color: #161616;
+        --text-color: #ececec;
         --reverse-text-color: var(--highlight-color);
         --special-text-color: var(--highlight-color);
         --dark-theme-color: var(--light-theme-color);
