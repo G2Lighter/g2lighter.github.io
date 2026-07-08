@@ -636,6 +636,7 @@ table.wiki-content-table {
     border-spacing: 0;
     margin: .5em auto;
     display: block;
+	overflow: auto hidden;
 }
 table.wiki-content-table td {
     border: 1px solid #888;
