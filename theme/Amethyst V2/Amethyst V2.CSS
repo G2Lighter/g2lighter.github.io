@@ -970,19 +970,20 @@ table.page-compare td, table.page-compare th, #action-area .diff-box td {
     flex-wrap: wrap;
 }
 
+.pager * {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
 .pager-no {
     padding: 0 1em;
+    height: 2.1em;
     position: absolute;
     bottom: 100%;
     left: -2px;
     font-weight: bold;
     background: var(--theme-color);
-}
-
-.pager * {
-    display: flex;
-    align-items: center;
-    height: 100%;
 }
 
 .pager .dots {
@@ -2150,7 +2151,7 @@ version: 2.3.1
 }
 
 .forum-category-box .pager {
-    margin: 1em 0;
+    margin: 2.5em 0 1em;
     text-align: center;
 }
 
