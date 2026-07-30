@@ -2534,6 +2534,13 @@ table#odialog-box-container td div {
 	font-size: 0;
 }
 
+.owindow > .button-bar:has([onclick*="cleanAll"]) {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+}
+
 .owindow .button-bar input {
     padding: 0 .5em;
 }
