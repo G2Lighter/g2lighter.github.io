@@ -2030,6 +2030,7 @@ version: 2.3.1
 
 .forum-group {
     margin: .5em auto;
+    overflow: auto;
 }
 
 .forum-group div.head {
