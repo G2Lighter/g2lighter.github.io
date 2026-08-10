@@ -1,7 +1,7 @@
 /*
 * 版式名-Theme Name：紫晶 V2
 * 设计者-Theme Designer：G2Lighter
-* 主题版本-Theme Version: v0.6.2 STABLE
+* 主题版本-Theme Version: v0.6.3 STABLE
 * https://g2lighter.wikidot.com/theme:amethyst-v2
 */
 
@@ -10,7 +10,7 @@
 /* 基础变量 全局设定 */
 
 :root {
-    --version: "v0.6.2 STABLE";
+    --version: "v0.6.3 STABLE";
     --theme-color: #9575ff;
     --accent-color: #1d1d1deb;
     --background-color: #161616;
@@ -2111,10 +2111,13 @@ version: 2.3.1
 }
 
 .forum-category-box table {
-    width: 100%;
+	display: block;
+    width: 100% !important;
     border-collapse: collapse;
     margin: 10px auto;
     padding: 0;
+    border: none;
+    overflow: auto hidden;
 }
 
 .forum-category-box table td {
@@ -6268,6 +6271,21 @@ div .colmod-block.creditHorm .colmod-content {
 
     div.wiki-note {
         margin: .5em 1em;
+    }
+
+    .changes-list-item {
+        grid: "t f"
+            "d r"
+            "c b";
+        grid-template-columns: 1fr min(8em, 30%);
+    }
+
+    .changes-list-item .revision-no {
+        width: 100%;
+    }
+
+    .changes-list-item + .changes-list-item {
+        border-top: var(--basic-border);
     }
 }
 
