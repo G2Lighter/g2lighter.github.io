@@ -33,9 +33,13 @@ a {
     color: var(--link-color);
 }
 
+div .page-rate-widget-box {
+    box-shadow: 0 0 5px -4px black;
+}
+
 div .page-rate-widget-box .rate-points {
-    background-color: var(--dim-text-color);
-    color: var(--background-color);
+    background: var(--accent-color);
+    color: var(--text-color);
 }
 
 #header #top-bar div>ul>li:hover>a {
