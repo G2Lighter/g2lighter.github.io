@@ -2538,7 +2538,7 @@ table#odialog-box-container td div {
 	font-size: 0;
 }
 
-.owindow > .button-bar:has([onclick*="cleanAll"]) {
+.owindow > .button-bar:has([onclick*="cleanAll"]:last-child) {
     position: fixed;
     width: 100%;
     left: 0;
@@ -6274,9 +6274,9 @@ div .colmod-block.creditHorm .colmod-content {
     }
 
     .changes-list-item {
-        grid: "t f"
+        grid: "t b"
             "d r"
-            "c b";
+            "c f";
         grid-template-columns: 1fr min(8em, 30%);
     }
 
