@@ -288,3 +288,24 @@ body:has(.saving-page .collapsible-block-folded[style*="none"]) #odialog-contain
         backdrop-filter: blur(3px);
     }
 }
+
+#u-component-top-box {
+    max-width: 500px;
+    margin: 0 auto 1.25rem;
+    padding: 1rem;
+    background-color: #b01;
+    border-radius: 20px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 10px 1px rgba(255, 255, 255, .5), inset 0 -15px 30px rgba(0, 0, 0, .25);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+#u-component-top-box #u-component-header {
+    font-size: 300%;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, .5);
+}
+
+#u-component-top-box * p {
+    margin: 0;
+}
