@@ -149,6 +149,7 @@ table.page-history td.optionstd a {
 @media (prefers-color-scheme: dark) {
     :root {
         --theme-color: #9575ff;
+        --link-color: var(--theme-color);
         --visited-color: #8a6ff5;
         --accent-color: #1d1d1deb;
         --background-color: #161616;
