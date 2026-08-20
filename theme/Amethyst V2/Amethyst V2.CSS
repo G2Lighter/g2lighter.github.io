@@ -2495,7 +2495,9 @@ table#odialog-box-container td div {
             box-shadow: 0px 2px 10px -2px var(--shadow-color);
 	max-width: 95%;
 	max-height: 90%;
-    overflow: hidden auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
 }
 
 .owindow .close {
@@ -2539,7 +2541,8 @@ table#odialog-box-container td div {
 }
 
 .owindow > .button-bar:has([onclick*="cleanAll"]:last-child) {
-    position: fixed;
+    position: absolute;
+    top: 100%;
     width: 100%;
     left: 0;
     z-index: -1;
@@ -6684,8 +6687,13 @@ a.action-area-close.btn.btn-danger {
     content: var(--watches-h1)
 }
 
-.button-insert-code {
-    --theme-color: var(--green)
+a.btn.button.button-insert-code {
+    --theme-color: var(--green);
+}
+
+a.button-insert-code::after {
+    color: var(--green);
+    content: var(--insert-code);
 }
 
 .content a[onclick*=scrollTo],
