@@ -4100,6 +4100,10 @@ blockquote,
     pointer-events: none;
 }
 
+#login-status:hover > a > strong {
+    --theme-color: var(--highlight-color);
+}
+
 @-webkit-keyframes notice {
     from {
         border-width: 4px;
