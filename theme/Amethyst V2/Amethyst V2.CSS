@@ -3527,7 +3527,7 @@ input#upload-userfile {
     margin: 0;
 }
 
-ul {
+ul, ol {
     -webkit-padding-start: 2em;
             padding-inline-start: 2em;
 }
