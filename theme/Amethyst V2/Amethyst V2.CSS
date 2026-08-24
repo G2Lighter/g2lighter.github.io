@@ -4101,7 +4101,7 @@ blockquote,
 }
 
 #login-status:hover > a > strong {
-    --theme-color: var(--highlight-color);
+    --theme-color: white;
 }
 
 @-webkit-keyframes notice {
