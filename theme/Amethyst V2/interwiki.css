@@ -1,6 +1,5 @@
 /* interwiki-style */
 :root {
-    --version: "v0.6.3 STABLE";
     --theme-color: #9575ff;
     --accent-color: #1d1d1deb;
     --background-color: #161616;
@@ -18,15 +17,8 @@
     --dim-text-color: #999;
     /* ---- */
     --border: #565656;
-    --green: #44ae44;
-    --error-color: #b33939;
-    --header-height: 50px;
-    --sidebar-width: 17em;
-    --footer-height: var(--header-height);
     --base-text: 15px;
-    --header-text: 13.5px;
     --scroll-width: .3em;
-    --scroll-height: .5em;
     color: var(--text-color);
     background-color: var(--background-color);
     font-size: var(--base-text);
