@@ -98,6 +98,12 @@
 #side-bar .close-menu {
     display: none;
 }
+
+#top-bar li ul {
+    max-height: calc(100vh - 2 * var(--header-height));
+    overflow: auto;
+}
+
 @media only screen and (max-width: 1024px) {
     #top-bar li > ul, #top-bar li:hover > ul {
         max-height: min(calc(7* var(--height), calc(100vh - var(--height) *3)));
