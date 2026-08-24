@@ -1,0 +1,125 @@
+/* interwiki-style */
+.side-block,body {
+    padding: unset;
+    background: unset
+}
+
+body {
+    font-family: unset;
+    font-size: unset;
+    overflow: unset
+}
+
+.side-block {
+    border: unset;
+    border-radius: unset;
+    -webkit-box-shadow: unset;
+            box-shadow: unset;
+    margin-bottom: unset
+}
+
+.side-block .heading {
+    color: unset;
+    border-bottom: unset;
+    padding-left: unset;
+    margin-bottom: unset;
+    font-size: unset;
+    font-weight: unset
+}
+
+.side-block .heading a {
+    cursor: unset
+}
+
+.side-block div.menu-item,.side-block p,body {
+    margin: unset
+}
+
+.side-block div.menu-item img {
+    display: none
+}
+
+.side-block div.menu-item a {
+    color: unset;
+    font-weight: unset;
+    text-decoration: unset;
+    width: 100%;
+    text-align: center
+}
+
+.side-block div.menu-item a:hover {
+    text-decoration: unset
+}
+
+* {
+    white-space: wrap
+}
+
+.menu-item {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0
+}
+
+a,a::before {
+    display: block;
+    -webkit-transition: .2s;
+    transition: .2s
+}
+
+a {
+    padding: .2em .2em .2em .5em;
+    position: relative;
+    z-index: 1;
+    font-size: 1rem;
+    color: var(--text-color)
+}
+
+a:hover {
+    text-decoration: none;
+    padding-left: .5em;
+    background-color: unset;
+    color: var(--highlight-color)
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+    width: 0;
+    left: 0;
+    top: 0;
+    background-color: var(--theme-color)
+}
+
+.menu-item a:hover::before {
+    width: 100%
+}
+
+.admin {
+    background-color: var(--accent-color)
+}
+
+:is(.heading,.collapsible-block-link,.collapsible-block-link a) {
+    text-align: center;
+    background-color: color-mix(in srgb,var(--theme-color),transparent);
+    color: var(--highlight-color)
+}
+
+a.collapsible-block-link:hover {
+    background-color: var(--theme-color)
+}
+
+.menu-item p {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+
+.heading p {
+    margin: 0;
+    padding: .1em 0
+}
