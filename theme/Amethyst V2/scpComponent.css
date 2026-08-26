@@ -323,3 +323,38 @@
 .creditRate div.creditButtonStandalone p a::before, .creditRate .creditButton p a::before {
     content: 'I';
 }
+
+/* 成人内容警告 组件 */
+#page-content ul div#u-adult-warning {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: #e4e4e4;
+    color: black;
+    font-weight: bold;
+}
+
+div#u-adult-header {
+    text-align: center;
+    font-size: 200%;
+    border-bottom: 1px solid var(--error-color);
+    color: #901;
+}
+
+div#u-adult-warning-content {
+    top: clac(var(--header-height) + 1rem);
+}
+
+#u-adult-warning p {
+    text-align: center;
+    margin: 0;
+}
+
+#u-adult-warning-content p {
+    font-style: italic;
+}
+
+.choice {
+    text-align: center;
+}
