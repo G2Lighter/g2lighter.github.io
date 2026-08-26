@@ -6440,10 +6440,18 @@ textarea.form-control.form-wiki {
     content: '：';
 }
 
-.admins-only, li.admins-only {
+.admins-only, li.admins-only, #who-rated-page-area div:has(a)::after {
     display: none;
 }
 
+@supports (grid-template-rows: subgrid) {
+	#who-rated-page-area div::after {
+	    content: var(--noRate);
+	    font-style: italic;
+	    text-align: center;
+	    width: 100%;
+	}
+}
 
 :root {
     --cleanAll: '(Click to close)';
@@ -6494,6 +6502,7 @@ textarea.form-control.form-wiki {
     --revert: 'yes, revert';
     --permissonError: 'Permission error';
     --pleaseNote: 'Please note:';
+    --noRate: 'No ratings on this page yet!';
 }
 
 :root:lang(cn) {
@@ -6545,6 +6554,7 @@ textarea.form-control.form-wiki {
     --revert: '回退';
     --permissonError: '权限错误';
     --pleaseNote: '请注意：';
+    --noRate: '本页面暂无评分！';
 }
 
 #rename-option-delete p {
