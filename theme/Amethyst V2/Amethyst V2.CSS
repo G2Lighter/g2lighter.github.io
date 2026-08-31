@@ -6962,3 +6962,4 @@ a.btn.button-yes\,-revert {
 
 .owindow:has([class*=revert]) p:nth-of-type(3)::after {
     content: var(--revertP3)
+}
