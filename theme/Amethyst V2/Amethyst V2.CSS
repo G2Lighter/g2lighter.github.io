@@ -6458,6 +6458,7 @@ textarea.form-control.form-wiki {
     --delete-1: 'Warning: ';
     --delete-2: 'This will permanently remove this page from the website, and it will be impossible to recover the data. Are you sure you want to do this?';
     --watches-p: 'These people will be notified when this page is changed or commented on.';
+    --watches-p-2: 'And even more.';
     --watches-h1: 'Who watches this page';
     --close: 'Close';
     --close-window: 'close window';
@@ -6518,6 +6519,7 @@ textarea.form-control.form-wiki {
     --Table-wizard: '表格向导';
     --Page-link-wizard: '站内链接向导';
     --watches-p: '当此页面有更改或被评论时，这些人将收到通知。';
+    --watches-p-2: '甚至更多。';
     --watches-h1: '谁在关注此页面';
     --delete-1: '警告：';
     --delete-2: '这将会从网站上彻底移除此页面，并且不可能恢复。你确定要这么做吗？';
@@ -6697,6 +6699,10 @@ a.action-area-close.btn.btn-danger {
 #action-area:has(ul[style*="list-style: none"]) p::after {
     font-size: 1rem;
     content: var(--watches-p)
+}
+
+#action-area:has(ul[style*="list-style: none"]) p:nth-of-type(2)::after {
+    content: var(--watches-p-2)
 }
 
 #action-area:has(ul[style*="list-style: none"]) h1::after {
