@@ -6032,7 +6032,7 @@ div .colmod-block.creditHorm .colmod-content {
             justify-content: center;
 }
 
-#who-rated-page-area div {
+#who-rated-page-area div, #edit-meta-newtag-form tr {
     display: flex;
     flex-wrap: wrap;
 }
