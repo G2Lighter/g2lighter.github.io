@@ -135,7 +135,7 @@ table.page-history td.optionstd a {
 }
 
 .yui-navset.yui-navset-top, blockquote, .blockquote, #toc, .forum-category-box .description-block, div.wiki-note {
-    box-shadow: 0px 0px 8px -1px var(--shadow-color);
+    box-shadow: 0px 0px 8px -4px var(--shadow-color);
 }
 
 .forum-category-box table tr.head td {
