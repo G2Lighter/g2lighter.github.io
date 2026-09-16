@@ -3942,6 +3942,7 @@ blockquote,
     display: block;
     border: none;
     height: var(--header-height);
+    width: calc(var(--header-height) * .55);
     padding: 0;
     margin: 0;
     opacity: 0;
