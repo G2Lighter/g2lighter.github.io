@@ -6172,8 +6172,8 @@ div .colmod-block.creditHorm .colmod-content {
         -webkit-mask-image: linear-gradient(90deg,#000 0%, #000c 70%, transparent 100%);
                 mask-image: -webkit-gradient(linear,left top, right top,from(#000), color-stop(70%, #000c), to(transparent));
                 mask-image: linear-gradient(90deg,#000 0%, #000c 70%, transparent 100%);
-        -webkit-transition: .3s;
-        transition: .3s;
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
         z-index: -1;
     }
     
