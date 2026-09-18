@@ -5418,6 +5418,10 @@ table.form td:last-child {
         "b c";
 }
 
+.site-changes-box .form {
+    overflow: auto;
+}
+
 .form tbody :first-child {
     grid-area: a;
 }
