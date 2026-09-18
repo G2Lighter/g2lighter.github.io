@@ -1981,7 +1981,7 @@ version: 2.3.1
 
 .autocomplete-container {
     position: relative;
-    width: 100%;
+    width: 100% !important;
     margin: 0;
 }
 .autocomplete-input {
