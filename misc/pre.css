@@ -516,6 +516,7 @@ body {
 	padding: 0 40px;
 	border-radius: 1em;
 	background: var(--bg-faint);
+    backdrop-filter: blur(2px);
 }
 
 .hm-inner .hm-mark {
