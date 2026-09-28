@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			The Man Who Forgot Everything — Interactive Presentation
+		</title>
+		<link href="https://g2lighter.github.io/misc/pre.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="stage" data-state="0">
+			<div class="timer-bg">
+				<div class="timer-display" id="timerDisplay">
+					00:00:00
+				</div>
+			</div>
+			<div class="clock">
+				<svg viewBox="0 0 200 200">
+					<circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width=".6" opacity=".12" />
+					<circle cx="100" cy="100" r="88" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".35" />
+					<circle cx="100" cy="100" r="81" fill="none" stroke="currentColor" stroke-width=".7" opacity=".15" />
+					<g stroke="currentColor" stroke-width="1.6" opacity=".55">
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(0 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(30 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(60 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(90 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(120 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(150 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(180 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(210 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(240 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(270 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(300 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(330 100 100)" />
+					</g>
+					<line class="hand hour-hand" x1="100" y1="100" x2="100" y2="54" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".95" />
+					<line class="hand minute-hand" x1="100" y1="100" x2="100" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".75" />
+					<line class="hand second-hand" x1="100" y1="100" x2="100" y2="22" stroke="var(--warm)" stroke-width="1.2" stroke-linecap="round" opacity=".9" />
+					<circle cx="100" cy="100" r="4.5" fill="currentColor" opacity=".85" />
+					<circle cx="100" cy="100" r="2" fill="var(--warm)" opacity=".9" />
+				</svg>
+			</div>
+			<div class="layer cover-layer">
+				<div class="cover-inner">
+					<div class="cover-tag">
+						The New Yorker · 2013
+					</div>
+					<h1>
+						The Man Who
+						<br>
+						<span class="warm">
+							Forgot
+						</span>
+						Everything
+					</h1>
+					<div class="cover-rule">
+					</div>
+					<p class="cover-sub">
+						Memory, identity, and the self —
+						<br>
+						the case of Henry Molaison (H.M.)
+					</p>
+					<p class="cover-meta" id="presenter">
+					</p>
+					<div class="cover-start">
+						Click to begin
+					</div>
+				</div>
+			</div>
+			<div class="layer title-layer">
+				<div class="title-inner">
+					<div class="eyebrow">
+						Introduction
+					</div>
+					<h1>
+						The Man Who
+						<br>
+						<span class="warm">
+							Forgot
+						</span>
+						Everything
+					</h1>
+					<div class="title-rule">
+					</div>
+					<p class="sub">
+						What if you could never form a new memory?
+						<br>
+						Every person a stranger. Every day the first.
+					</p>
+					<p class="meta">
+						A summary, then a personal response
+					</p>
+				</div>
+			</div>
+			<div class="layer toc-layer">
+				<div class="toc-inner">
+					<div class="toc-label">
+						Contents
+					</div>
+					<ul class="toc-list">
+						<li>
+							<span class="toc-num">
+								01
+							</span>
+							<span class="toc-text">
+								The case of H.M. — surgery, amnesia, a permanent present
+							</span>
+						</li>
+						<li>
+							<span class="toc-num">
+								02
+							</span>
+							<span class="toc-text">
+								Memory is not one system — declarative vs. procedural
+							</span>
+						</li>
+						<li>
+							<span class="toc-num">
+								03
+							</span>
+							<span class="toc-text">
+								A legacy in neuroscience — the most studied brain
+							</span>
+						</li>
+						<li>
+							<span class="toc-num">
+								04
+							</span>
+							<span class="toc-text">
+								Response — memory in the digital age
+							</span>
+						</li>
+						<li>
+							<span class="toc-num">
+								05
+							</span>
+							<span class="toc-text">
+								Reflection — what we take for granted
+							</span>
+						</li>
+					</ul>
+					<div class="toc-hint">
+						Click to continue
+					</div>
+				</div>
+			</div>
+			<div class="layer summary-layer">
+				<div class="summary-inner">
+					<div class="sum-card">
+						<div class="card-tag">
+							Summary · Part 1
+						</div>
+						<h3>
+							The Case of
+							<span class="warm">
+								H.M.
+							</span>
+						</h3>
+						<p>
+							Born 1926 in Connecticut. Severe epilepsy from age 10. In 1953, an experimental surgery removed both
+							<strong style="color:var(--text);">
+								hippocampi
+							</strong>
+							. Seizures improved — but he could no longer form
+							<span class="hl">
+								new declarative memories
+							</span>
+							.
+						</p>
+					</div>
+					<div class="sum-card">
+						<div class="card-tag">
+							Summary · Part 2
+						</div>
+						<h3>
+							Permanent
+							<span class="warm">
+								present tense
+							</span>
+						</h3>
+						<p>
+							Working memory lasted only
+							<strong style="color:var(--text);">
+								30–60 seconds
+							</strong>
+							. Every person was a stranger. Every day was the first day. He lived entirely in the present — with no past to hold onto and no future to imagine.
+						</p>
+					</div>
+					<div class="sum-card">
+						<div class="card-tag">
+							Summary · Part 3
+						</div>
+						<h3>
+							Memory is
+							<span class="warm">
+								not one system
+							</span>
+						</h3>
+						<p>
+							Declarative memory (facts, events) depends on the hippocampus. Procedural memory (skills, habits) does not. In the mirror star-tracing task, H.M. improved daily — yet never remembered practising.
+						</p>
+					</div>
+					<div class="sum-card">
+						<div class="card-tag">
+							Summary · Part 4
+						</div>
+						<h3>
+							A
+							<span class="warm">
+								legacy
+							</span>
+							in neuroscience
+						</h3>
+						<p>
+							Called "the most important patient ever studied in neuropsychology." After his death in 2008, his brain was sliced into 2,401 sections and digitized — an enduring memorial to the man who forgot everything.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="layer hm-layer">
+				<div class="hm-inner">
+					<div class="hm-mark">
+						"
+					</div>
+					<p>
+						If H.M. were in this room right now,
+						<br>
+						he would have already
+						<span class="warm">
+							forgotten
+						</span>
+						<br>
+						what this presentation is about.
+					</p>
+				</div>
+			</div>
+			<div class="layer response-layer">
+				<div class="response-inner">
+					<div class="eyebrow">
+						Response · Personal
+					</div>
+					<h2>
+						Memory in the
+						<span class="accent">
+							digital age
+						</span>
+					</h2>
+					<p>
+						The article notes that we increasingly store memory outside our bodies: notes, phones, the cloud. I do this too — calendars, photos, chat logs. But H.M. had no choice: his declarative memory lived
+						<span class="hl">
+							entirely outside him
+						</span>
+						.
+					</p>
+					<div class="response-quote">
+						"After the operation, all of Molaison's declarative memory lived outside his own body, while only some of ours does."
+					</div>
+					<p>
+						This made me ask: if we outsource memory, do we lose part of ourselves? Or does memory simply become something we
+						<em>
+							share
+						</em>
+						— with people, with devices, with the world?
+					</p>
+					<p class="closing">
+						Because in the end, we are not only what we remember — we are also what we choose to notice, to keep, and to share.
+					</p>
+				</div>
+			</div>
+			<div class="layer qa-layer">
+				<div class="qa-inner">
+					<div class="qa-thanks">
+						Thank
+						<span class="warm">
+							You
+						</span>
+					</div>
+					<div class="qa-rule">
+					</div>
+					<div class="qa-sub">
+						Questions &amp; Answers
+					</div>
+					<div class="qa-hint" id="qaHint">
+						Click to revisit a page
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="progress">
+			<div class="dot active">
+			</div>
+			<div class="dot">
+			</div>
+			<div class="dot">
+			</div>
+			<div class="dot">
+			</div>
+			<div class="dot">
+			</div>
+		</div>
+		<div class="click-hint">
+			Click anywhere
+		</div>
+		<div class="slide-tag">
+			01 / 06
+		</div>
+		<div class="qa-picker" id="qaPicker">
+			<div class="picker-title">
+				Revisit a page
+			</div>
+			<div class="picker-grid" id="pickerGrid">
+				<div class="picker-card" data-target="1">
+					<div class="picker-num">
+						01
+					</div>
+					<div class="picker-name">
+						Title
+					</div>
+					<div class="picker-bar">
+					</div>
+					<div class="picker-desc">
+						Introduction &amp; framing
+					</div>
+				</div>
+				<div class="picker-card" data-target="2">
+					<div class="picker-num">
+						02
+					</div>
+					<div class="picker-name">
+						Contents
+					</div>
+					<div class="picker-bar">
+					</div>
+					<div class="picker-desc">
+						Outline of the talk
+					</div>
+				</div>
+				<div class="picker-card" data-target="3">
+					<div class="picker-num">
+						03
+					</div>
+					<div class="picker-name">
+						Summary
+					</div>
+					<div class="picker-bar">
+					</div>
+					<div class="picker-desc">
+						The case, the science, the legacy
+					</div>
+				</div>
+				<div class="picker-card" data-target="4">
+					<div class="picker-num">
+						04
+					</div>
+					<div class="picker-name">
+						Response
+					</div>
+					<div class="picker-bar">
+					</div>
+					<div class="picker-desc">
+						Memory in the digital age
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+			<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+				<circle cx="12" cy="12" r="4" />
+				<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+			</svg>
+			<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+			</svg>
+		</button>
+		<script>
+			const stage         = document.querySelector('.stage');
+			const dots          = document.querySelectorAll('.dot');
+			const slideTag      = document.querySelector('.slide-tag');
+			const hmLayer       = document.querySelector('.hm-layer');
+			const responseLayer = document.querySelector('.response-layer');
+			const themeToggle   = document.getElementById('themeToggle');
+			const timerDisplay  = document.getElementById('timerDisplay');
+			const qaPicker      = document.getElementById('qaPicker');
+			const qaHint        = document.getElementById('qaHint');
+			const pickerGrid    = document.getElementById('pickerGrid');
+
+			const hourHand   = document.querySelector('.hour-hand');
+			const minuteHand = document.querySelector('.minute-hand');
+			const secondHand = document.querySelector('.second-hand');
+
+			const MAX_STATE = 5;
+			let state = 0;
+			let hmPhase = 'hm';
+			let pickerActive = false;
+			let timerStarted = false;
+			let presentationStart = 0;
+
+			/* ══════════ TIMER ══════════ */
+			let timerRaf = null;
+			let timerZeroing = false;
+			let timerFrozen = false;
+
+			function formatTime(s) {
+			  if (s < 0) s = 0;
+			  const m  = Math.floor(s / 60);
+			  const ss = Math.floor(s % 60);
+			  const ms = Math.floor((s % 1) * 100);
+			  return `${String(m).padStart(2,'0')}:${String(ss).padStart(2,'0')}:${String(ms).padStart(2,'0')}`;
+			}
+
+			function tickTimer() {
+			  if (state === 4 && !timerZeroing && !timerFrozen && timerStarted) {
+			    const e = (performance.now() - presentationStart) / 1000;
+			    timerDisplay.textContent = formatTime(e);
+			  }
+			  timerRaf = requestAnimationFrame(tickTimer);
+			}
+
+			function startTimerLoop() {
+			  if (timerRaf) return;
+			  timerRaf = requestAnimationFrame(tickTimer);
+			}
+
+			function stopTimerLoop() {
+			  if (timerRaf) { cancelAnimationFrame(timerRaf); timerRaf = null; }
+			}
+
+			function animateTimerToZero(duration = 800) {
+			  timerZeroing = true;
+			  const startValue = Math.max(0, (performance.now() - presentationStart) / 1000);
+			  const startTime  = performance.now();
+
+			  function tick() {
+			    const t = Math.min((performance.now() - startTime) / duration, 1);
+			    const eased = 1 - Math.pow(1 - t, 3);
+			    const current = startValue * (1 - eased);
+			    timerDisplay.textContent = formatTime(Math.max(0, current));
+
+			    if (t < 1) {
+			      requestAnimationFrame(tick);
+			    } else {
+			      timerDisplay.textContent = formatTime(0);
+			      timerZeroing = false;
+			      timerFrozen = true;
+			    }
+			  }
+			  requestAnimationFrame(tick);
+			}
+
+			/* ══════════ CLOCK HANDS ══════════ */
+			const INIT_HOUR   = 305;
+			const INIT_MINUTE = 60;
+			const INIT_SECOND = 0;
+
+			let baseHour   = INIT_HOUR;
+			let baseMinute = INIT_MINUTE;
+			let baseSecond = INIT_SECOND;
+
+			const SPEED_HOUR   = 360 / (12 * 3600);
+			const SPEED_MINUTE = 360 / 3600;
+			const SPEED_SECOND = 360 / 60;
+
+			let elapsed = 0;
+			let startTime = 0;
+			let spinRaf = null;
+			let isSpinning = false;
+			let isResetting = false;
+			let frozen = false;
+
+			function updateHands() {
+			  hourHand.style.transform   = `rotate(${baseHour   + elapsed * SPEED_HOUR}deg)`;
+			  minuteHand.style.transform = `rotate(${baseMinute + elapsed * SPEED_MINUTE}deg)`;
+			  secondHand.style.transform = `rotate(${baseSecond + elapsed * SPEED_SECOND}deg)`;
+			}
+
+			function spinLoop() {
+			  if (!isSpinning) return;
+			  elapsed = (performance.now() - startTime) / 1000;
+			  updateHands();
+			  spinRaf = requestAnimationFrame(spinLoop);
+			}
+
+			function startSpin() {
+			  if (isSpinning || isResetting || frozen) return;
+			  isSpinning = true;
+			  startTime = performance.now() - elapsed * 1000;
+			  spinRaf = requestAnimationFrame(spinLoop);
+			}
+
+			function stopSpin() {
+			  isSpinning = false;
+			  if (spinRaf) { cancelAnimationFrame(spinRaf); spinRaf = null; }
+			}
+
+			function animateHandsTo(targetHour, targetMinute, targetSecond, duration, onDone) {
+			  [hourHand, minuteHand, secondHand].forEach(el => {
+			    el.style.transition = `transform ${duration}ms cubic-bezier(.45, 0, .15, 1)`;
+			  });
+
+			  hourHand.style.transform   = `rotate(${targetHour}deg)`;
+			  minuteHand.style.transform = `rotate(${targetMinute}deg)`;
+			  secondHand.style.transform = `rotate(${targetSecond}deg)`;
+
+			  setTimeout(() => {
+			    [hourHand, minuteHand, secondHand].forEach(el => {
+			      el.style.transition = 'none';
+			    });
+			    if (onDone) onDone();
+			    void hourHand.offsetWidth;
+			    [hourHand, minuteHand, secondHand].forEach(el => {
+			      el.style.transition = '';
+			    });
+			    isResetting = false;
+			  }, duration + 30);
+			}
+
+			function snapTo12(duration = 1100) {
+			  if (isResetting) return;
+			  stopSpin();
+			  isResetting = true;
+			  frozen = false;
+
+			  const curHour   = baseHour   + elapsed * SPEED_HOUR;
+			  const curMinute = baseMinute + elapsed * SPEED_MINUTE;
+			  const curSecond = baseSecond + elapsed * SPEED_SECOND;
+
+			  function toTwelve(cur) {
+			    return Math.ceil((cur + 5) / 360) * 360;
+			  }
+
+			  const targetHour   = toTwelve(curHour);
+			  const targetMinute = toTwelve(curMinute);
+			  const targetSecond = toTwelve(curSecond);
+
+			  animateHandsTo(targetHour, targetMinute, targetSecond, duration, () => {
+			    baseHour = 0;
+			    baseMinute = 0;
+			    baseSecond = 0;
+			    elapsed = 0;
+			    updateHands();
+			    frozen = true;
+			  });
+			}
+
+			function resetHandsToInit(duration = 1400) {
+			  if (isResetting) return;
+			  stopSpin();
+			  isResetting = true;
+			  frozen = false;
+
+			  const curHour   = baseHour   + elapsed * SPEED_HOUR;
+			  const curMinute = baseMinute + elapsed * SPEED_MINUTE;
+			  const curSecond = baseSecond + elapsed * SPEED_SECOND;
+
+			  function forwardTo(cur, init) {
+			    let delta = ((init - cur) % 360 + 360) % 360;
+			    if (delta < 30) delta += 360;
+			    return cur + delta;
+			  }
+
+			  const targetHour   = forwardTo(curHour, INIT_HOUR);
+			  const targetMinute = forwardTo(curMinute, INIT_MINUTE);
+			  const targetSecond = forwardTo(curSecond, INIT_SECOND);
+
+			  animateHandsTo(targetHour, targetMinute, targetSecond, duration, () => {
+			    baseHour   = INIT_HOUR;
+			    baseMinute = INIT_MINUTE;
+			    baseSecond = INIT_SECOND;
+			    elapsed = 0;
+			    updateHands();
+			  });
+			}
+
+			/* ══════════ UI ══════════ */
+			function updateUI() {
+			  dots.forEach((d, i) => d.classList.toggle('active', i === state));
+			  slideTag.textContent = String(state + 1).padStart(2, '0') + ' / 06';
+			}
+
+			/* ══════════ NAVIGATION ══════════ */
+			function go(s) {
+			  const prev = state;
+			  state = s;
+			  stage.dataset.state = state;
+
+			  // 离开 P4
+			  if (prev === 4 && state !== 4) {
+			    hmLayer.classList.remove('fade-out');
+			    responseLayer.classList.remove('visible');
+			    hmPhase = 'hm';
+			    stopTimerLoop();
+			    timerFrozen = false;
+			  }
+
+			  // 进入 P4
+			  if (state === 4 && prev !== 4) {
+			    hmPhase = 'hm';
+			    hmLayer.classList.remove('fade-out');
+			    responseLayer.classList.remove('visible');
+			    frozen = false;
+			    timerFrozen = false;
+			    if (timerStarted) {
+			      const e = (performance.now() - presentationStart) / 1000;
+			      timerDisplay.textContent = formatTime(e);
+			    }
+			    startTimerLoop();
+			  }
+
+			  // 进入 P3：开始转
+			  if (state === 3 && prev !== 3) {
+			    frozen = false;
+			    if (!isSpinning && !isResetting) startSpin();
+			  }
+
+			  // 回到封面：复位指针
+			  if (state === 0 && prev !== 0) {
+			    resetHandsToInit();
+			  }
+
+			  // 离开 Q&A：关闭选择器
+			  if (prev === 5 && state !== 5) {
+			    qaPicker.classList.remove('active');
+			    pickerActive = false;
+			    qaHint.classList.remove('hidden');
+			  }
+
+			  // 首次离开封面：启动计时
+			  if (prev === 0 && state !== 0 && !timerStarted) {
+			    timerStarted = true;
+			    presentationStart = performance.now();
+			  }
+
+			  updateUI();
+			}
+
+			/* ══════════ FORWARD / BACK ══════════ */
+			function advance() {
+			  if (state === 4) {
+			    if (hmPhase === 'hm') {
+			      hmPhase = 'response';
+			      animateTimerToZero(800);
+			      hmLayer.classList.add('fade-out');
+			      responseLayer.classList.add('visible');
+			      snapTo12(1100);
+			      return;
+			    }
+			    go(5);
+			    return;
+			  }
+
+			  if (state === 5) {
+			    if (!pickerActive) {
+			      pickerActive = true;
+			      qaPicker.classList.add('active');
+			      qaHint.classList.add('hidden');
+			    }
+			    return;
+			  }
+
+			  if (state < MAX_STATE) go(state + 1);
+			}
+
+			function prevStep() {
+			  if (state === 4 && hmPhase === 'response') {
+			    hmPhase = 'hm';
+			    hmLayer.classList.remove('fade-out');
+			    responseLayer.classList.remove('visible');
+			    frozen = false;
+			    timerFrozen = false;
+			    if (!isSpinning && !isResetting) startSpin();
+			    return;
+			  }
+
+			  if (state === 5 && pickerActive) {
+			    pickerActive = false;
+			    qaPicker.classList.remove('active');
+			    qaHint.classList.remove('hidden');
+			    return;
+			  }
+
+			  go(Math.max(0, state - 1));
+			}
+
+			/* ══════════ MOUSE ══════════ */
+			document.addEventListener('click', () => {
+			  advance();
+			});
+
+			/* ══════════ KEYBOARD / 激光笔 ══════════ */
+			document.addEventListener('keydown', (e) => {
+			  const k = e.key;
+
+			  // 下一页
+			  if (k === 'PageDown' || k === 'ArrowRight' || k === ' ' ||
+			      k === 'Enter' || k === 'ArrowDown' || k === 'n' || k === 'N') {
+			    e.preventDefault();
+			    advance();
+			    return;
+			  }
+
+			  // 上一页
+			  if (k === 'PageUp' || k === 'ArrowLeft' ||
+			      k === 'Backspace' || k === 'ArrowUp' || k === 'p' || k === 'P') {
+			    e.preventDefault();
+			    prevStep();
+			    return;
+			  }
+
+			  // Home：回封面
+			  if (k === 'Home') {
+			    e.preventDefault();
+			    go(0);
+			    return;
+			  }
+
+			  // End：跳 Q&A
+			  if (k === 'End') {
+			    e.preventDefault();
+			    go(5);
+			    return;
+			  }
+
+			  // F：全屏切换
+			  if (k === 'f' || k === 'F') {
+			    toggleFullscreen();
+			  }
+			});
+
+			/* ══════════ 全屏 ══════════ */
+			function toggleFullscreen() {
+			  if (!document.fullscreenElement) {
+			    const el = document.documentElement;
+			    if (el.requestFullscreen) el.requestFullscreen();
+			    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+			  } else {
+			    if (document.exitFullscreen) document.exitFullscreen();
+			    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+			  }
+			}
+
+			/* ══════════ PICKER CARDS ══════════ */
+			pickerGrid.addEventListener('click', (e) => {
+			  const card = e.target.closest('.picker-card');
+			  if (!card) return;
+			  e.stopPropagation();
+			  const target = parseInt(card.dataset.target, 10);
+			  qaPicker.classList.remove('active');
+			  pickerActive = false;
+			  qaHint.classList.remove('hidden');
+			  go(target);
+			});
+
+			/* ══════════ THEME TOGGLE ══════════ */
+			themeToggle.addEventListener('click', (e) => {
+			  e.stopPropagation();
+			  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+			  document.documentElement.setAttribute('data-theme', isLight ? 'dark' : 'light');
+			});
+			themeToggle.addEventListener('mousedown', (e) => e.stopPropagation());
+
+			/* ══════════ INIT ══════════ */
+			updateHands();
+			go(0);
+		</script>
+		<script>
+			const params = new URLSearchParams(location.search);
+			const output = document.getElementById('presenter');
+
+			if (params.toString() === '') {
+			  output.innerHTML = 'Author: Steven Shapin';
+			} else {
+			  output.innerHTML = `Presenter: ${params.get('l')} ${params.get('f')} · Author: Steven Shapin`;
+			}
+		</script>
+	</body>
+</html>
