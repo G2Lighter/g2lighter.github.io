@@ -607,25 +607,25 @@
 			    startTimerLoop();
 			  }
 
-			  // 进入 P3：开始转
+			  // 进入 P3
 			  if (state === 3 && prev !== 3) {
 			    frozen = false;
 			    if (!isSpinning && !isResetting) startSpin();
 			  }
 
-			  // 回到封面：复位指针
+			  // 回到封面/复位
 			  if (state === 0 && prev !== 0) {
 			    resetHandsToInit();
 			  }
 
-			  // 离开 Q&A：关闭选择器
+			  // 离开 Q&A/关闭选择器
 			  if (prev === 5 && state !== 5) {
 			    qaPicker.classList.remove('active');
 			    pickerActive = false;
 			    qaHint.classList.remove('hidden');
 			  }
 
-			  // 首次离开封面：启动计时
+			  // 首次离开封面启动计时
 			  if (prev === 0 && state !== 0 && !timerStarted) {
 			    timerStarted = true;
 			    presentationStart = performance.now();
