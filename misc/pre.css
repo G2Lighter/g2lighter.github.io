@@ -164,7 +164,7 @@ body {
 	left: calc(50% - var(--clock-size) / 2);
 }
 
-.stage[data-state="4"]:has(.fade-out):is(.clock, .timer-bg) {
+.stage[data-state="4"]:has(.fade-out) :is(.clock, .timer-bg) {
 	filter: blur(5px)
 }
 
