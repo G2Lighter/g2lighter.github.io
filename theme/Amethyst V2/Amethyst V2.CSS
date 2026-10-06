@@ -1805,6 +1805,7 @@ version: 2.3.1
 
 .yui-navset .yui-content,
 .yui-navset .yui-navset-top .yui-content {
+    display: flow-root;
     border: 1px solid var(--accent-color);
     border-top: none;
     padding: .25em .5em;
