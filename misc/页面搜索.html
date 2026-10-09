@@ -19,144 +19,135 @@
             }
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="url"],
-        input[type="password"],
-        textarea {
-            padding: 5px;
-            border: 1px solid var(--ui-border-color);
-            width: 100%;
+        ::selection {
+            background-color: var(--theme-color);
+            color: var(--special-text-color);
+        }
+
+        .search-container {
+            position: relative;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        input[type="text"] {
+            padding: 8px 35px 8px 15px;
+            border: none;
+            border-radius: 20px;
             background: var(--header-color);
-            border-radius: 2px;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
+            box-shadow: inset 0 -1px 0 var(--shadow-color);
+            width: 250px;
+            transition: all 0.2s;
             color: var(--text-color);
-            -webkit-appearance: none;
         }
 
-        textarea {
-            resize: vertical;
-        }
-
-        textarea,
-        input {
+        input[type="text"]:focus {
+            box-shadow: inset 0 -2px 0 var(--theme-color);
             outline: none;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="url"],
-        input[type="password"],
-        input.text,
-        textarea {
-            border: none;
-            box-shadow: inset 0px -1px 0px 0px var(--shadow-color);
-            -webkit-box-shadow: inset 0px -1px 0px 0px var(--shadow-color);
-            transition: all 0.2s;
+        .search-icon {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--theme-color);
         }
 
-        input[type="text"]:focus,
-        input[type="email"]:focus,
-        input[type="url"]:focus,
-        input[type="password"]:focus,
-        input.text:focus,
-        textarea:focus {
-            box-shadow: inset 0px -2px 0px 0px var(--theme-color);
-            -webkit-box-shadow: inset 0px -2px 0px 0px var(--theme-color);
-        }
-
-        input[type="submit"],
-        input[type="button"],
-        button {
-            border: 0.5px solid var(--ui-border-color);
-            background: var(--header-color);
-            color: var(--text-color);
-            width: 80px;
-            padding: 2.5px 0;
-            margin: 0 5px;
-            font-size: 90%;
-            transition: all 0.2s;
-            -webkit-appearance: none;
-        }
-
-        input[type="submit"]:hover,
-        input[type="button"]:hover,
-        button:hover {
-            border-color: var(--theme-color);
-            background: var(--theme-color);
-            color: var(--special-text-color);
-        }
-
-        input[type="submit"]:active,
-        input[type="button"]:active,
-        button:active {
-            border-color: var(--theme-color);
-            background: var(--theme-color);
-            color: var(--special-text-color);
-        }
         hr {
             background-color: var(--theme-color);
-            margin: 1em .2em;
-            padding: 0;
+            margin: 1.5em 0;
             height: 1px;
             border: none;
         }
+
+        .search-title {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        * {
+            -webkit-tap-highlight-color: none;
+        }
     </style>
+
     <div style="text-align:center">
-        <span style="font-size: 1.3em;">全站搜索</span>
+        <!-- 全站搜索 -->
+        <span class="search-title">全站搜索</span>
         <form action="https://search.ipv6s.net/search" id="searchForm">
-            <input placeholder="站内搜索" type="text" name="q" style="width:200px;" value="" required>
-            <input type="hidden" name="site" value="bloxd.wikidot.com">
-            <input type="submit" value="搜索" class="fsoubutton">
+            <div class="search-container">
+                <input
+                    placeholder="输入搜索内容..."
+                    type="text"
+                    name="q"
+                    required
+                >
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" onclick="document.getElementById('searchForm').requestSubmit()">
+                    <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0c.41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/>
+                </svg>
+                <input type="hidden" name="site" value="bloxd.wikidot.com">
+            </div>
         </form>
+
         <hr>
-        <span style="font-size: 1.3em;">维基搜索</span>
-        <br />
-        <input placeholder="站内维基搜索" type="text" id="q" style="width:200px;" value="">
-        <button type="submit" onclick="search()">搜索</button>
+
+        <!-- 维基搜索 -->
+        <span class="search-title">维基搜索</span>
+        <form action="javascript:void(0)" id="searchForm2">
+            <div class="search-container">
+                <input
+                    placeholder="输入维基条目..."
+                    type="text"
+                    id="wikiQ"
+                >
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" onclick="document.getElementById('searchForm2').requestSubmit()">
+                    <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0c.41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/>
+                </svg>
+            </div>
+        </form>
     </div>
+    <script src="https://bloxd.wdfiles.com/local--code/_hidden:search/1"></script>
     <script>
-        var searchForm = document.getElementById('searchForm');
-        searchForm.onsubmit = function(){
-        var url = this.action;
-        var q = this.children['q'].value;
-        var site = this.children['site'].value;
-        var url = url + '?q=!yh !go '+q+' site:'+ site + "&categories=general&language=zh-CN";
-        window.open(url);
-        return false;
+        // 全站搜索处理
+        document.getElementById('searchForm').onsubmit = function(e) {
+            e.preventDefault();
+            const q = encodeURIComponent(this.q.value);
+            window.open(`https://searx.oloke.xyz/search?q=${q} site:bloxd.wikidot.com`);
         };
+
+        // 维基搜索处理
+        document.getElementById('searchForm2').onsubmit = function(e) {
+            e.preventDefault();
+            const q = document.getElementById('wikiQ').value;
+            // 原有维基搜索逻辑
+            var str = findKey(JSON.parse(xhr.responseText).item, q);
+            if (!str) str = findKey(enr, q);
+            if (!str) str = findKey(JSON.parse(xhr.responseText).game, q);
+            if (!str) {
+                const m = q.split(" ").map(word =>
+                    word[0].toUpperCase() + word.substr(1)
+                ).join(' ');
+                str = findKey(enr, m);
+            }
+            str = str.replace(/(yellow|white|red|purple|pink|orange|magenta|lime|lightGray|lightBlue|green|gray|cyan|brown|blue|black|Description|Mob)/g, '')
+                   .replace(/(extraC|superC|hyperC|ultraC|megaC)/g, 'C')
+                   .replace(/StickP/g, 'StickyP')
+                   .replace(/worldB/g, 'worldb')
+                   .replace(/([a-z])([A-Z])/g, '$1 $2');
+            window.open("https://bloxd.wikidot.com/wiki:" + str);
+        };
+
+        // 工具函数
+        function findKey(obj, value, compare = (a, b) => a === b) {
+            return Object.keys(obj).find(k => compare(obj[k], value));
+        }
+
+        // 加载翻译数据
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://static2.bloxd.io/translations/zh-Hans.json', true);
+        xhr.send();
     </script>
-  <script src="https://bloxd.wdfiles.com/local--files/home%3Ahome/Bloxd_Chinese_simplified.json"></script>
-  <script src="https://bloxd.wdfiles.com/local--files/home%3Ahome/Bloxd_En.json"></script>
-  <script>
-
-    function findKey(obj, value, compare = (a, b) => a === b) {
-      return Object.keys(obj).find(k => compare(obj[k], value));
-    };
-
-    function search(){
-      var q = document.getElementById('q').value;
-      var str=findKey(arr, q);
-      if (typeof str === "undefined") {
-          var str=findKey(enr, q);
-      };
-      if (typeof str === "undefined") {
-          var m = q.split(" ");
-          for (let i = 0; i < m.length; i++) {
-              m[i] = m[i][0].toUpperCase() + m[i].substr(1);
-          };
-          m = m.join(' ');
-          var str=findKey(enr, m);
-      };
-      str = str.replace(/yellow|white|red|purple|pink|orange|magenta|lime|lightGray|lightBlue|green|gray|cyan|brown|blue|black|Description/g, '');
-      str = str.replace(/extraC|superC|hyperC|ultraC|megaC/g, 'C');
-      str = str.replace(/StickP/g, 'StickyP');
-      str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
-      window.open("https://bloxd.wikidot.com/wiki:" + str);
-      return false;
-    };
-  </script>
 </body>
 </html>
