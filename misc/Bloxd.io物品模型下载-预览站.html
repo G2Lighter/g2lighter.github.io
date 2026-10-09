@@ -40,48 +40,120 @@
             
             #canvasZone {
                 width: 100%;
-                height: max-content;
+                height: 100%;
             }
             .div12 {
-              height:100%;
+              height:fit-content;
               text-align: center;
-              display: flex;
-              flex-direction: column;
             }
+        :root {
+            --header-color: #fdfbfff3;
+            --theme-color: #8969ff;
+            --shadow-color: #d4dbd5;
+            --ui-border-color: #c9c9c9;
+            --text-color: #000000;
+            --special-text-color: #fefefe;
+        }
 
-            .div12>div {
-              flex: 1 1 0;
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --header-color: #2d2d2df0;
+                --shadow-color: #131313;
+                --ui-border-color: #7b7171;
+                --text-color: #e5e5e5;
             }
-            
-            #url {
-              height:2em;
-              width:30em;
-              text-align: center;
-            }
-            
-            #button {
-              height:2em;
-            }
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        textarea {
+            padding: 5px;
+            border: 1px solid var(--ui-border-color);
+            width: 100%;
+            background: var(--header-color);
+            border-radius: 2px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            color: var(--text-color);
+            -webkit-appearance: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        textarea,
+        input {
+            outline: none;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input.text,
+        textarea {
+            border: none;
+            box-shadow: inset 0px -1px 0px 0px var(--shadow-color);
+            -webkit-box-shadow: inset 0px -1px 0px 0px var(--shadow-color);
+            transition: all 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input.text:focus,
+        textarea:focus {
+            box-shadow: inset 0px -2px 0px 0px var(--theme-color);
+            -webkit-box-shadow: inset 0px -2px 0px 0px var(--theme-color);
+        }
+
+        input[type="submit"],
+        input[type="button"],
+        button {
+            border: 0.5px solid var(--ui-border-color);
+            background: var(--header-color);
+            color: var(--text-color);
+            width: 80px;
+            min-width: max-content;
+            padding: 2.5px 0;
+            margin: 0 5px;
+            font-size: 90%;
+            transition: all 0.2s;
+            -webkit-appearance: none;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover,
+        button:hover {
+            border-color: var(--theme-color);
+            background: var(--theme-color);
+            color: var(--special-text-color);
+        }
+
+        input[type="submit"]:active,
+        input[type="button"]:active,
+        button:active {
+            border-color: var(--theme-color);
+            background: var(--theme-color);
+            color: var(--special-text-color);
+        }
         </style>
     </head>
 <body>
 <div class="div12">
-    <div>
-    </div>
-    <div class="container">
-    <input id="url" placeholder="输入物品名称（区分大小写）">
-    <div style="height:1em;">
-    </div>
-    <button id="button" onclick="geturl(0)">预览模型</button>
-    <button id="button" onclick="geturl(1)">获取物品模型</button>
-        <div id="canvasZone">
-            <canvas id="renderCanvas"></canvas>
-        </div>
-    </div>
-    <div>
-    </div>
+<input id="url" type="text" style="width:min-content; min-width: 200px; text-align: center;" placeholder="输入物品名称（区分大小写）">
+<div style="height:1em;">
+
 </div>
-<script>
+<button id="button" onclick="geturl(0)">预览模型</button>
+<button id="button" onclick="geturl(1)">获取物品模型</button>
+    <div id="canvasZone"><canvas id="renderCanvas"></canvas></div>
+    <script>
 function geturl(t) {
   const url1= document.getElementById("url").value.split(" ");
   for (let i = 0; i < url1.length; i++) {
@@ -118,23 +190,25 @@ function geturl(t) {
     var light2 = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 1), scene);
     light.intensity = 0.7;
     light2.intensity = 1;
-          if (url1=="Awp") {
-            BABYLON.SceneLoader.ImportMesh("", "https://static2.bloxd.io/models/", "AWP.glb", scene, function(newMeshes) {
-                if (t==1) {
-                    window.location.href = url3;
-                }
-            });
-          }
-          else {
-           BABYLON.SceneLoader.ImportMesh("", "https://static2.bloxd.io/models/", "".concat(url1.join("%20"), '.glb'), scene, function(newMeshes) {
-                if (t==1) {
-                    window.location.href = url3;
-                }
-            });
-          };
+  if (url1=="Awp") {
+    BABYLON.SceneLoader.ImportMesh("", "https://static2.bloxd.io/models/", "AWP.glb", scene, function
+(newMeshes) {
+        if (t==1) {
+            window.location.href = url3;
+        }
+    });
+  }
+  else {
+   BABYLON.SceneLoader.ImportMesh("", "https://static2.bloxd.io/models/", "".concat(url1.join("%20"), '.glb'), scene, function
+(newMeshes) {
+        if (t==1) {
+            window.location.href = url3;
+        }
+    });
+  };
 
-            return scene;
-        };
+    return scene;
+};
                 window.initFunction = async function() {
                     
                     
@@ -158,7 +232,7 @@ function geturl(t) {
         window.addEventListener("resize", function () {
             engine.resize();
         });
-    };
-</script>
+};
+    </script>
 </body>
 </html>
