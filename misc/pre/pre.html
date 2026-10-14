@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			The Man Who Forgot Everything — Interactive Presentation
+		</title>
+		<style>
+		@import 'pre.css'
+		</style>
+	</head>
+	<body>
+		<div class="stage state-0">
+			<!-- TIMER -->
+			<div class="timer-bg">
+				<div class="timer-display" id="timerDisplay">
+					00:00:00
+				</div>
+			</div>
+			<!-- CLOCK -->
+			<div class="clock">
+				<svg viewBox="0 0 200 200">
+					<circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width=".6" opacity=".12" />
+					<circle cx="100" cy="100" r="88" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".35" />
+					<circle cx="100" cy="100" r="81" fill="none" stroke="currentColor" stroke-width=".7" opacity=".15" />
+					<g stroke="currentColor" stroke-width="1.6" opacity=".55">
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(0 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(30 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(60 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(90 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(120 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(150 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(180 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(210 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(240 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(270 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(300 100 100)" />
+						<line x1="100" y1="14" x2="100" y2="24" transform="rotate(330 100 100)" />
+					</g>
+					<line class="hand hour-hand" x1="100" y1="100" x2="100" y2="54" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".95" />
+					<line class="hand minute-hand" x1="100" y1="100" x2="100" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".75" />
+					<line class="hand second-hand" x1="100" y1="100" x2="100" y2="22" stroke="var(--warm)" stroke-width="1.2" stroke-linecap="round" opacity=".9" />
+					<circle cx="100" cy="100" r="4.5" fill="currentColor" opacity=".85" />
+					<circle cx="100" cy="100" r="2" fill="var(--warm)" opacity=".9" />
+				</svg>
+			</div>
+			<!-- COVER -->
+			<div class="layer cover-layer">
+				<div class="cover-inner">
+					<div class="cover-tag">
+						The New Yorker · 2013
+					</div>
+					<h1>
+						The Man Who
+						<br>
+						<span class="warm">
+							Forgot
+						</span>
+						Everything
+					</h1>
+					<div class="cover-rule">
+					</div>
+					<p class="cover-sub">
+						Memory, identity, and the self —
+						<br>
+						the case of Henry Molaison (H.M.)
+					</p>
+					<p class="cover-meta" id="presenter">
+						Author: Steven Shapin
+					</p>
+					<div class="cover-start">
+						Click to begin
+					</div>
+				</div>
+			</div>
+			<!-- TITLE -->
+			<div class="layer title-layer">
+				<div class="title-inner">
+					<div class="eyebrow">
+						Introduction
+					</div>
+					<h1>
+						The Man Who
+						<br>
+						<span class="warm">
+							Forgot
+						</span>
+						Everything
+					</h1>
+					<div class="title-rule">
+					</div>
+					<p class="sub">
+						What if you could never form a new memory?
+						<br>
+						Every person a stranger. Every day the first.
+					</p>
+					<p class="meta">
+						A summary, then a personal response
+					</p>
+					<p class="placeholder">
+						placeholder text
+					</p>
+				</div>
+			</div>
+			<!-- TOC -->
+			<div class="layer toc-layer">
+				<div class="toc-inner">
+					<div class="toc-label">
+						Contents
+					</div>
+					<ul class="toc-list">
+						<li>
+							<span class="toc-num">
+								01
+							</span>
+							<span class="toc-text">
+								Summary The case of H.M. — a legacy in neuroscience
+							</span>
+						</li>
+						<li>
+							<span class="toc-num">
+								02
+							</span>
+							<span class="toc-text">
+								Response — a call to remember
+							</span>
+						</li>
+						<li>
+							<span class="toc-num">
+								03
+							</span>
+							<span class="toc-text">
+								Q&A
+							</span>
+						</li>
+					</ul>
+					<div class="toc-hint">
+						Click to continue
+					</div>
+				</div>
+			</div>
+			<!-- SUMMARY -->
+			<div class="layer summary-layer">
+				<div class="summary-inner">
+					<div class="sum-card">
+						<div class="start">
+							<div class="card-tag">
+								Summary · Part 1
+							</div>
+							<h3>
+								A Life <span class="warm">Interrupted</span>
+							</h3>
+							<p>
+								Epilepsy began at ten and worsened through his teens, bringing <strong style="color:var(--text);">seizures</strong> severe enough to disrupt school, work, and <span class="hl">any chance at an ordinary social life</span>.
+							</p>
+						</div>
+						<div class="end">
+							<div class="card-tag">
+								Summary · Part 3
+							</div>
+							<h3>
+								The <span class="warm">Cost</span> of Relief
+							</h3>
+							<p>
+								The surgery quieted the seizures, but removing both <strong style="color:var(--text);">hippocampi</strong> and much of the <strong style="color:var(--text);">medial temporal lobe</strong> severed his ability to form new declarative memories.
+							</p>
+						</div>
+					</div>
+					<div class="sum-card">
+						<div class="start">
+							<div class="card-tag">
+								Summary · Part 2
+							</div>
+							<h3>
+								The <span class="warm">Experimental</span> Choice
+							</h3>
+							<p>
+								By the early 1950s, with drugs failing and seizures unrelenting, his doctors proposed <strong style="color:var(--text);">an experimental brain operation</strong> — one that had never been tried in this precise form.
+							</p>
+						</div>
+						<div class="end">
+							<div class="card-tag">
+								Summary · Part 4
+							</div>
+							<h3>
+								From Henry to <span class="warm">H.M.</span>
+							</h3>
+							<p>
+								To protect his privacy, researchers stripped away his name, publishing him only as <strong style="color:var(--text);">"H.M."</strong> — and the man who couldn't remember himself became <span class="hl">the most famous patient in neuroscience</span>.
+							</p>
+						</div>
+					</div>
+					<div class="sum-card">
+					</div>
+				</div>
+			</div>
+			<!-- H.M. -->
+			<div class="layer hm-layer">
+				<div class="hm-inner">
+					<div class="hm-mark">
+						"
+					</div>
+					<p>
+						If H.M. were in this room right now,
+						<br>
+						he would have already
+						<span class="warm">
+							forgotten
+						</span>
+						<br>
+						what I've said minutes ago.
+					</p>
+				</div>
+			</div>
+			<!-- RESPONSE -->
+			<div class="layer response-layer">
+				<div class="response-inner">
+					<div class="eyebrow">
+						Response
+					</div>
+					<h2>
+						Memory in the
+						<span class="accent">
+							digital age
+						</span>
+					</h2>
+					<p>
+						The article notes that we increasingly store memory <span class="hl">outside our bodies</span>: notes, phones, the cloud.
+					</p>
+					<div class="response-quote">
+						"After the operation, all of Molaison's declarative memory lived outside his own body, while only some of ours does."
+					</div>
+					<p>
+						After all, we are not only what we remember — we are also what we choose to notice, to keep, and to share.
+					</p>
+				</div>
+			</div>
+			<!-- CALL / REFLECTION -->
+			<div class="layer call-layer">
+				<div class="call-inner">
+					<div class="eyebrow">
+						Response · A Call to Remember
+					</div>
+					<h2>
+						H.M. could never
+						<span class="warm">
+							remember
+						</span>
+						—
+						<br>
+						but
+						<span class="accent">
+							we can.
+						</span>
+					</h2>
+					<p>
+						Every photo we keep, every note we write, every story we tell — these are not just records. They are the
+						<span class="hl">
+							architecture of who we are.
+						</span>
+					</p>
+					<p class="call-emphasis">
+						So maybe the real lesson of his life is not what he lost — it is what we so often
+						<span class="warm">
+							take for granted.
+						</span>
+					</p>
+				</div>
+			</div>
+			<!-- Q&A -->
+			<div class="layer qa-layer">
+				<div class="qa-inner">
+					<div class="qa-thanks">
+						Thank
+						<span class="warm">
+							You
+						</span>
+					</div>
+					<div class="qa-rule">
+					</div>
+					<div class="qa-sub">
+						Questions &amp; Answers
+					</div>
+					<div class="qa-hint" id="qaHint">
+						Click to revisit a page
+					</div>
+				</div>
+			</div>
+			<!-- PROGRESS -->
+			<div class="progress">
+				<div class="dot">
+				</div>
+				<div class="dot">
+				</div>
+				<div class="dot">
+				</div>
+				<div class="dot">
+				</div>
+				<div class="dot">
+				</div>
+				<div class="dot">
+				</div>
+			</div>
+			<div class="click-hint">
+				Click anywhere
+			</div>
+			<div class="slide-tag">
+				01 / 06
+			</div>
+			<!-- Q&A PICKER -->
+			<div class="qa-picker" id="qaPicker">
+				<div class="picker-title">
+					Revisit a page
+				</div>
+				<div class="picker-grid" id="pickerGrid">
+					<div class="picker-card" data-target="1">
+						<div class="picker-num">
+							01
+						</div>
+						<div class="picker-name">
+							Title
+						</div>
+						<div class="picker-bar">
+						</div>
+						<div class="picker-desc">
+							Introduction &amp; framing
+						</div>
+					</div>
+					<div class="picker-card" data-target="2">
+						<div class="picker-num">
+							02
+						</div>
+						<div class="picker-name">
+							Contents
+						</div>
+						<div class="picker-bar">
+						</div>
+						<div class="picker-desc">
+							Outline of the talk
+						</div>
+					</div>
+					<div class="picker-card" data-target="3" data-phase="hm">
+						<div class="picker-num">
+							03
+						</div>
+						<div class="picker-name">
+							Summary
+						</div>
+						<div class="picker-bar">
+						</div>
+						<div class="picker-desc">
+							The case, the science, the legacy
+						</div>
+					</div>
+					<div class="picker-card" data-target="4" data-phase="response">
+						<div class="picker-num">
+							04
+						</div>
+						<div class="picker-name">
+							Response
+						</div>
+						<div class="picker-bar">
+						</div>
+						<div class="picker-desc">
+							Memory in the digital age
+						</div>
+					</div>
+					<div class="picker-card" data-target="4" data-phase="call">
+						<div class="picker-num">
+							05
+						</div>
+						<div class="picker-name">
+							Reflection
+						</div>
+						<div class="picker-bar">
+						</div>
+						<div class="picker-desc">
+							A call to remember
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- THEME TOGGLE -->
+			<button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+				<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+					<circle cx="12" cy="12" r="4" />
+					<path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+				</svg>
+				<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+				</svg>
+			</button>
+		</div>
+		<script src="pre.js"></script>
+	</body>
+</html>
