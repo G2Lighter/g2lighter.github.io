@@ -510,7 +510,7 @@ SUMMARY
 }
 
 .sum-card:nth-child(3) {
-	background-image: url(https://ts1.tc.mm.bing.net/th/id/R-C.71eb61e196e3c2dcbcab273f8f14859e?rik=zvRmnCeg9p45Rg&riu=http%3a%2f%2fk.sinaimg.cn%2fn%2fsinacn20190907ac%2f89%2fw514h375%2f20190907%2f6204-ieftthy3342486.jpg%2fw700d1q75cms.jpg&ehk=KWySu6%2blWAfVe4YGGOoin7BoA5OlotifnhSLxbOP%2bk0%3d&risl=&pid=ImgRaw&r=0);
+	background-image: url(HM1.jpg);
 	background-position: center;
 	background-size: cover;
 	grid-area: b;
@@ -527,7 +527,7 @@ SUMMARY
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-image: url(https://bkimg.cdn.bcebos.com/pic/8d5494eef01f3a29d24568c89625bc315c607c23);
+	background-image: url(HM2.jpg);
 	background-size: cover;
 	background-position: center;
 }
