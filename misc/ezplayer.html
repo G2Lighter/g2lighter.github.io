@@ -21,7 +21,6 @@
     text-align: center;
   }
 
-  /* 改为铺满容器，由 JS 传入的 fitMode 控制 object-fit */
   img, video {
     width: 100%;
     height: 100%;
@@ -62,15 +61,18 @@
       return match ? match[1] : null;
     }
 
+    // 提取媒体 URL (支持 src 和 name)
     let mediaUrl = null;
-    const knownParams = ['src', 'autoplay', 'loop', 'showUi', 'type', 'fitMode'];
+    const knownParams = ['src', 'name', 'autoplay', 'loop', 'showUi', 'type', 'fitMode'];
     const srcIndex = rawQuery.indexOf('src=');
-    
-    if (srcIndex !== -1) {
-      let rest = rawQuery.substring(srcIndex + 4);
+    const nameIndex = rawQuery.indexOf('name=');
+    let startIndex = srcIndex !== -1 ? srcIndex + 4 : (nameIndex !== -1 ? nameIndex + 5 : -1);
+
+    if (startIndex !== -1) {
+      let rest = rawQuery.substring(startIndex);
       let cutIndex = rest.length;
       for (const p of knownParams) {
-        if (p === 'src') continue;
+        if (p === 'src' || p === 'name') continue;
         const idx = rest.indexOf('&' + p + '=');
         if (idx !== -1 && idx < cutIndex) {
           cutIndex = idx;
@@ -90,10 +92,9 @@
     // 2. 处理 fitMode 参数
     // ==========================================
     let fitMode = getParam('fitMode') || 'contain';
-    // 校验合法性，防止非法 CSS 注入或拼写错误
     const validFitModes = ['contain', 'cover', 'fill', 'none', 'scale-down'];
     if (!validFitModes.includes(fitMode.toLowerCase())) {
-      fitMode = 'contain'; // 非法值回退到默认
+      fitMode = 'contain';
     } else {
       fitMode = fitMode.toLowerCase();
     }
@@ -137,9 +138,9 @@
     }
 
     // ==========================================
-    // 5. 自动播放降级策略
+    // 5. 自动播放降级策略（区分音频和视频）
     // ==========================================
-    function tryAutoPlay(el) {
+    function tryAutoPlay(el, mediaType) {
       if (!autoPlay) return;
 
       el.muted = false; 
@@ -147,19 +148,27 @@
 
       if (playPromise !== undefined) {
         playPromise.then(() => {
-          console.log('有声自动播放成功');
+          console.log('✅ 有声自动播放成功');
         }).catch((error) => {
-          console.warn('有声自动播放被拦截，尝试静音播放', error);
+          console.warn('⚠️ 有声自动播放被拦截', error);
           
-          el.muted = true;
-          const mutePlayPromise = el.play();
-          
-          if (mutePlayPromise !== undefined) {
-            mutePlayPromise.then(() => {
-              console.log('静音自动播放成功');
-            }).catch((err2) => {
-              console.error('静音自动播放被拦截', err2);
-            });
+          // 只有视频才降级尝试静音播放
+          if (mediaType === 'video') {
+            console.warn('视频降级尝试静音播放');
+            el.muted = true;
+            const mutePlayPromise = el.play();
+            
+            if (mutePlayPromise !== undefined) {
+              mutePlayPromise.then(() => {
+                console.log('✅ 静音自动播放成功');
+              }).catch((err2) => {
+                console.error('❌ 静音自动播放被拦截', err2);
+              });
+            }
+          } else {
+            // 音频直接放弃，强制保持不静音
+            el.muted = false;
+            console.warn('音频自动播放被拦截，等待用户手动播放（不会静音）');
           }
         });
       }
@@ -174,7 +183,6 @@
       element = document.createElement('img');
       element.src = mediaUrl;
       element.alt = 'Image';
-      // 应用 fitMode
       element.style.objectFit = fitMode;
       element.onerror = () => showError('图片加载失败');
       
@@ -188,7 +196,6 @@
     } else if (type === 'video') {
       element = document.createElement('video');
       element.src = mediaUrl;
-      // 应用 fitMode
       element.style.objectFit = fitMode;
       
       if (showUi) {
@@ -214,7 +221,7 @@
     // 7. 执行降级自动播放
     // ==========================================
     if (type === 'audio' || type === 'video') {
-      tryAutoPlay(element);
+      tryAutoPlay(element, type);
     }
   })();
 </script>
