@@ -5834,7 +5834,7 @@ li.folded > .colmod-content {
 .scp-image-block.block-right {
     float: right;
     clear: right;
-    margin: 0 2em 1em;
+    margin: 0 0 1em 2em;
 }
 
 .scp-image-block.block-left {
