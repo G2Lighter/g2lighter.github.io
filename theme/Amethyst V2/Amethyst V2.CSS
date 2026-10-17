@@ -5831,6 +5831,23 @@ li.folded > .colmod-content {
     float: right;
 }
 
+.scp-image-block.block-right {
+    float: right;
+    clear: right;
+    margin: 0 2em 1em;
+}
+
+.scp-image-block.block-left {
+    float: left;
+    clear: left;
+    margin: 0 2em 1em 0;
+}
+
+.scp-image-block.block-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
 body .creditRate {
     margin-right: 0;
 }
