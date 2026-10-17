@@ -5768,6 +5768,10 @@ img.image::after {
             box-shadow: 1px 1px 4px var(--shadow-color);
 }
 
+.scp-image-block p {
+	margin: 0;
+}
+
 .colmod-block > ul,
 .colmod-block > ul > li {
     display:block;
