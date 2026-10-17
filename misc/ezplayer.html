@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ezplayer for SCP CN</title>
+<title>纯净媒体播放 for SCP CN</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html {
@@ -18,7 +18,7 @@
     justify-content: center;
     overflow: hidden;
     font-family: system-ui, -apple-system, sans-serif;
-    text-align: center;
+   text-align: center;
   }
 
   img, video {
@@ -101,13 +101,20 @@
       document.body.innerHTML = `<div class="error-hint">${msg}</div>`;
     }
 
-    if (!mediaUrl) {
+    // ==========================================
+    // 3. 特殊值过滤（新增）
+    // ==========================================
+    // 将 mediaUrl 去除首尾空白后转小写，用于比对“无意义”的值
+    const normalizedSrc = (mediaUrl || '').trim().toLowerCase();
+    const invalidSrcValues = ['', 'unset', 'none', 'null', 'undefined', 'false', '0'];
+
+    if (!mediaUrl || invalidSrcValues.includes(normalizedSrc)) {
       showError('请通过 ?src= 参数提供媒体地址');
       return;
     }
 
     // ==========================================
-    // 3. 判断文件类型
+    // 4. 判断文件类型
     // ==========================================
     // 剥离 URL 参数，只取后缀名
     const urlWithoutQuery = mediaUrl.split('?')[0];
@@ -131,7 +138,7 @@
     }
 
     // ==========================================
-    // 4. 核心：自动播放降级策略
+    // 5. 核心：自动播放降级策略
     // ==========================================
     function tryAutoPlay(el) {
       if (!autoPlay) return;
@@ -162,7 +169,7 @@
     }
 
     // ==========================================
-    // 5. 渲染媒体
+    // 6. 渲染媒体
     // ==========================================
     let element;
 
@@ -205,7 +212,7 @@
     document.body.appendChild(element);
 
     // ==========================================
-    // 6. 执行降级自动播放
+    // 7. 执行降级自动播放
     // ==========================================
     if (type === 'audio' || type === 'video') {
       tryAutoPlay(element);
