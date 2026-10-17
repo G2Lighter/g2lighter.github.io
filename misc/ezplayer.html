@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>纯净媒体播放 for SCP CN</title>
+<title>ezplayer for SCP CN</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html {
@@ -18,14 +18,14 @@
     justify-content: center;
     overflow: hidden;
     font-family: system-ui, -apple-system, sans-serif;
-   text-align: center;
+    text-align: center;
   }
 
+  /* 改为铺满容器，由 JS 传入的 fitMode 控制 object-fit */
   img, video {
-    max-width: 100%;
-    max-height: 100%;
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: contain; /* 默认值 */
     outline: none;
     display: block;
   }
@@ -48,32 +48,26 @@
 <script>
   (function () {
     // ==========================================
-    // 1. 健壮的 URL 参数提取（防止带参 URL 被截断）
+    // 1. 健壮的 URL 参数提取
     // ==========================================
     const rawQuery = window.location.search.substring(1);
     
-    // 自定义提取函数
     function getParam(name) {
-      // 先尝试标准解析
       const params = new URLSearchParams(window.location.search);
       let val = params.get(name);
       if (val !== null) return val;
 
-      // 兜底：正则强行提取，允许 URL 内部包含一些未编码的符号
       const regex = new RegExp('(?:^|&)' + name + '=([^&]*)');
       const match = rawQuery.match(regex);
       return match ? match[1] : null;
     }
 
-    // 提取 src（资源地址）
-    // 注意：为了防止 src 本身的参数和播放器参数混淆，我们优先匹配已知的控制参数作为边界
     let mediaUrl = null;
-    const knownParams = ['src', 'autoplay', 'loop', 'showUi', 'type'];
+    const knownParams = ['src', 'autoplay', 'loop', 'showUi', 'type', 'fitMode'];
     const srcIndex = rawQuery.indexOf('src=');
     
     if (srcIndex !== -1) {
       let rest = rawQuery.substring(srcIndex + 4);
-      // 寻找下一个已知参数作为截断点
       let cutIndex = rest.length;
       for (const p of knownParams) {
         if (p === 'src') continue;
@@ -83,7 +77,6 @@
         }
       }
       mediaUrl = rest.substring(0, cutIndex);
-      // 解码（如果用户规范地编码了）
       try { mediaUrl = decodeURIComponent(mediaUrl); } catch(e) {}
     }
 
@@ -91,32 +84,38 @@
     const autoPlay = getParam('autoplay') === '1' || getParam('autoplay') === 'true';
     const loop = getParam('loop') === '1' || getParam('loop') === 'true';
     const showUi = getParam('showUi') === '1' || getParam('showUi') === 'true';
-    // 可选：强制指定类型
     const forceType = getParam('type');
 
     // ==========================================
-    // 2. 错误处理
+    // 2. 处理 fitMode 参数
+    // ==========================================
+    let fitMode = getParam('fitMode') || 'contain';
+    // 校验合法性，防止非法 CSS 注入或拼写错误
+    const validFitModes = ['contain', 'cover', 'fill', 'none', 'scale-down'];
+    if (!validFitModes.includes(fitMode.toLowerCase())) {
+      fitMode = 'contain'; // 非法值回退到默认
+    } else {
+      fitMode = fitMode.toLowerCase();
+    }
+
+    // ==========================================
+    // 3. 错误处理
     // ==========================================
     function showError(msg) {
       document.body.innerHTML = `<div class="error-hint">${msg}</div>`;
     }
 
-    // ==========================================
-    // 3. 特殊值过滤（新增）
-    // ==========================================
-    // 将 mediaUrl 去除首尾空白后转小写，用于比对“无意义”的值
     const normalizedSrc = (mediaUrl || '').trim().toLowerCase();
     const invalidSrcValues = ['', 'unset', 'none', 'null', 'undefined', 'false', '0'];
 
     if (!mediaUrl || invalidSrcValues.includes(normalizedSrc)) {
-      showError('请通过 ?src= 参数提供媒体地址');
+      showError('请通过 name 或 src 参数提供媒体地址');
       return;
     }
 
     // ==========================================
     // 4. 判断文件类型
     // ==========================================
-    // 剥离 URL 参数，只取后缀名
     const urlWithoutQuery = mediaUrl.split('?')[0];
     const extMatch = urlWithoutQuery.match(/\.([a-zA-Z0-9]+)$/);
     const ext = extMatch ? extMatch[1].toLowerCase() : '';
@@ -133,35 +132,33 @@
     }
 
     if (!type) {
-      showError('无法识别的媒体类型，请通过 ?type= 指定');
+      showError('无法识别的媒体类型');
       return;
     }
 
     // ==========================================
-    // 5. 核心：自动播放降级策略
+    // 5. 自动播放降级策略
     // ==========================================
     function tryAutoPlay(el) {
       if (!autoPlay) return;
 
-      // 第一重尝试：有声播放
       el.muted = false; 
       const playPromise = el.play();
 
       if (playPromise !== undefined) {
         playPromise.then(() => {
-          console.log('✅ 有声自动播放成功');
+          console.log('有声自动播放成功');
         }).catch((error) => {
-          console.warn('⚠️ 有声自动播放被拦截，降级尝试静音播放...', error);
+          console.warn('有声自动播放被拦截，尝试静音播放', error);
           
-          // 第二重尝试：静音播放
           el.muted = true;
           const mutePlayPromise = el.play();
           
           if (mutePlayPromise !== undefined) {
             mutePlayPromise.then(() => {
-              console.log('✅ 静音自动播放成功');
+              console.log('静音自动播放成功');
             }).catch((err2) => {
-              console.error('❌ 静音自动播放同样被拦截', err2);
+              console.error('静音自动播放被拦截', err2);
             });
           }
         });
@@ -177,6 +174,8 @@
       element = document.createElement('img');
       element.src = mediaUrl;
       element.alt = 'Image';
+      // 应用 fitMode
+      element.style.objectFit = fitMode;
       element.onerror = () => showError('图片加载失败');
       
     } else if (type === 'audio') {
@@ -189,15 +188,16 @@
     } else if (type === 'video') {
       element = document.createElement('video');
       element.src = mediaUrl;
+      // 应用 fitMode
+      element.style.objectFit = fitMode;
       
       if (showUi) {
         element.controls = true;
       } else {
-        // 如果不显示控件，点击视频切换播放/暂停，并顺便解除静音
         element.onclick = () => {
           if (element.paused) {
             element.play();
-            element.muted = false; // 用户点击时尝试开启声音
+            element.muted = false; 
           } else {
             element.pause();
           }
@@ -208,7 +208,6 @@
       element.onerror = () => showError('视频加载失败');
     }
 
-    // 将媒体元素直接放入 body
     document.body.appendChild(element);
 
     // ==========================================
