@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>纯净媒体播放</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  img, video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    outline: none;
+    display: block;
+  }
+
+  audio {
+    width: 100%;
+    max-width: 600px;
+    outline: none;
+  }
+
+  .error-hint {
+    color: #6e7681;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<script>
+  (function () {
+    // ==========================================
+    // 1. 健壮的 URL 参数提取（防止带参 URL 被截断）
+    // ==========================================
+    const rawQuery = window.location.search.substring(1);
+    
+    // 自定义提取函数
+    function getParam(name) {
+      // 先尝试标准解析
+      const params = new URLSearchParams(window.location.search);
+      let val = params.get(name);
+      if (val !== null) return val;
+
+      // 兜底：正则强行提取，允许 URL 内部包含一些未编码的符号
+      const regex = new RegExp('(?:^|&)' + name + '=([^&]*)');
+      const match = rawQuery.match(regex);
+      return match ? match[1] : null;
+    }
+
+    // 提取 src（资源地址）
+    // 注意：为了防止 src 本身的参数和播放器参数混淆，我们优先匹配已知的控制参数作为边界
+    let mediaUrl = null;
+    const knownParams = ['src', 'autoplay', 'loop', 'showUi', 'type'];
+    const srcIndex = rawQuery.indexOf('src=');
+    
+    if (srcIndex !== -1) {
+      let rest = rawQuery.substring(srcIndex + 4);
+      // 寻找下一个已知参数作为截断点
+      let cutIndex = rest.length;
+      for (const p of knownParams) {
+        if (p === 'src') continue;
+        const idx = rest.indexOf('&' + p + '=');
+        if (idx !== -1 && idx < cutIndex) {
+          cutIndex = idx;
+        }
+      }
+      mediaUrl = rest.substring(0, cutIndex);
+      // 解码（如果用户规范地编码了）
+      try { mediaUrl = decodeURIComponent(mediaUrl); } catch(e) {}
+    }
+
+    // 提取其他控制参数
+    const autoPlay = getParam('autoplay') === '1' || getParam('autoplay') === 'true';
+    const loop = getParam('loop') === '1' || getParam('loop') === 'true';
+    const showUi = getParam('showUi') === '1' || getParam('showUi') === 'true';
+    // 可选：强制指定类型
+    const forceType = getParam('type');
+
+    // ==========================================
+    // 2. 错误处理
+    // ==========================================
+    function showError(msg) {
+      document.body.innerHTML = `<div class="error-hint">${msg}</div>`;
+    }
+
+    if (!mediaUrl) {
+      showError('请通过 ?src= 参数提供媒体地址');
+      return;
+    }
+
+    // ==========================================
+    // 3. 判断文件类型
+    // ==========================================
+    // 剥离 URL 参数，只取后缀名
+    const urlWithoutQuery = mediaUrl.split('?')[0];
+    const extMatch = urlWithoutQuery.match(/\.([a-zA-Z0-9]+)$/);
+    const ext = extMatch ? extMatch[1].toLowerCase() : '';
+
+    const imgExts = ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp', 'ico'];
+    const audioExts = ['mp3', 'wav', 'ogg', 'oga', 'aac', 'flac', 'm4a'];
+    const videoExts = ['mp4', 'webm', 'ogg', 'ogv', 'mov', 'mkv'];
+
+    let type = forceType;
+    if (!type) {
+      if (imgExts.includes(ext)) type = 'image';
+      else if (audioExts.includes(ext)) type = 'audio';
+      else if (videoExts.includes(ext)) type = 'video';
+    }
+
+    if (!type) {
+      showError('无法识别的媒体类型，请通过 ?type= 指定');
+      return;
+    }
+
+    // ==========================================
+    // 4. 渲染媒体
+    // ==========================================
+    let element;
+
+    if (type === 'image') {
+      element = document.createElement('img');
+      element.src = mediaUrl;
+      element.alt = 'Image';
+      element.onerror = () => showError('图片加载失败');
+      
+    } else if (type === 'audio') {
+      element = document.createElement('audio');
+      element.src = mediaUrl;
+      element.controls = true; // 音频默认必须有控件，否则无法操作
+      if (autoPlay) element.autoplay = true;
+      if (loop) element.loop = true;
+      
+      element.onerror = () => showError('音频加载失败');
+      
+      // 自动播放策略：带声音的自动播放可能被拦截
+      if (autoPlay) {
+        element.play().catch(() => {
+          // 如果被拦截，静默失败，不弹任何 UI，等用户点击原生控件
+        });
+      }
+      
+    } else if (type === 'video') {
+      element = document.createElement('video');
+      element.src = mediaUrl;
+      
+      // 根据 showUi 决定是否显示控件
+      if (showUi) {
+        element.controls = true;
+      } else {
+        // 如果不显示控件，点击视频最好能切换播放/暂停（可选逻辑）
+        element.onclick = () => {
+          if (element.paused) element.play();
+          else element.pause();
+        };
+      }
+      
+      if (autoPlay) element.autoplay = true;
+      if (loop) element.loop = true;
+      
+      element.onerror = () => showError('视频加载失败');
+
+      // 针对自动播放的特殊处理：如果不显示控件且要求自动播放，浏览器基本都会拦截
+      // 尝试静音播放，或捕获错误
+      if (autoPlay) {
+        element.play().catch(() => {
+          // 失败就失败，保持画面静止
+        });
+      }
+    }
+
+    // 将媒体元素直接放入 body
+    document.body.appendChild(element);
+  })();
+</script>
+
+</body>
+</html>
