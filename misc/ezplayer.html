@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>纯净媒体播放 for SCP CN</title>
+<title>ezplayer for SCP CN</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html {
@@ -130,7 +130,38 @@
     }
 
     // ==========================================
-    // 4. 渲染媒体
+    // 4. 核心：自动播放降级策略
+    // ==========================================
+    function tryAutoPlay(el) {
+      if (!autoPlay) return;
+
+      // 第一重尝试：有声播放
+      el.muted = false; 
+      const playPromise = el.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log('✅ 有声自动播放成功');
+        }).catch((error) => {
+          console.warn('⚠️ 有声自动播放被拦截，降级尝试静音播放...', error);
+          
+          // 第二重尝试：静音播放
+          el.muted = true;
+          const mutePlayPromise = el.play();
+          
+          if (mutePlayPromise !== undefined) {
+            mutePlayPromise.then(() => {
+              console.log('✅ 静音自动播放成功');
+            }).catch((err2) => {
+              console.error('❌ 静音自动播放同样被拦截', err2);
+            });
+          }
+        });
+      }
+    }
+
+    // ==========================================
+    // 5. 渲染媒体
     // ==========================================
     let element;
 
@@ -143,50 +174,41 @@
     } else if (type === 'audio') {
       element = document.createElement('audio');
       element.src = mediaUrl;
-      element.controls = true; // 音频默认必须有控件，否则无法操作
-      if (autoPlay) element.autoplay = true;
+      element.controls = true; 
       if (loop) element.loop = true;
-      
       element.onerror = () => showError('音频加载失败');
-      
-      // 自动播放策略：带声音的自动播放可能被拦截
-      if (autoPlay) {
-        element.play().catch(() => {
-          // 如果被拦截，静默失败，不弹任何 UI，等用户点击原生控件
-        });
-      }
       
     } else if (type === 'video') {
       element = document.createElement('video');
       element.src = mediaUrl;
       
-      // 根据 showUi 决定是否显示控件
       if (showUi) {
         element.controls = true;
       } else {
-        // 如果不显示控件，点击视频最好能切换播放/暂停（可选逻辑）
+        // 如果不显示控件，点击视频切换播放/暂停，并顺便解除静音
         element.onclick = () => {
-          if (element.paused) element.play();
-          else element.pause();
+          if (element.paused) {
+            element.play();
+            element.muted = false; // 用户点击时尝试开启声音
+          } else {
+            element.pause();
+          }
         };
       }
       
-      if (autoPlay) element.autoplay = true;
       if (loop) element.loop = true;
-      
       element.onerror = () => showError('视频加载失败');
-
-      // 针对自动播放的特殊处理：如果不显示控件且要求自动播放，浏览器基本都会拦截
-      // 尝试静音播放，或捕获错误
-      if (autoPlay) {
-        element.play().catch(() => {
-          // 失败就失败，保持画面静止
-        });
-      }
     }
 
     // 将媒体元素直接放入 body
     document.body.appendChild(element);
+
+    // ==========================================
+    // 6. 执行降级自动播放
+    // ==========================================
+    if (type === 'audio' || type === 'video') {
+      tryAutoPlay(element);
+    }
   })();
 </script>
 
