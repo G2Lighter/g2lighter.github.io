@@ -5730,10 +5730,7 @@ div .page-rate-widget-box a:hover, :is(.thread-container .post .options .btn-pri
     text-align: center;
     border-bottom: .2em solid var(--theme-color);
     background: var(--accent-color);
-}
-
-.scp-image-caption p {
-    margin: .2em;
+    padding: 0 .8em;
 }
 
 .scp-image-block img, .image {
