@@ -196,36 +196,34 @@ function snapTo12(duration = 1100) {
 }
 
 function resetHandsToInit(duration = 1400) {
+    // 注意：这里不要写 let baseHour = INIT_HOUR; 直接使用全局变量
+    if (isResetting) return;
+    stopSpin();
+    isResetting = true;
+    frozen = false;
 
-	let baseHour = INIT_HOUR;
-	let baseMinute = INIT_MINUTE;
-	let baseSecond = INIT_SECOND;
-	if (isResetting) return;
-	stopSpin();
-	isResetting = true;
-	frozen = false;
+    const curHour = baseHour + elapsed * SPEED_HOUR;
+    const curMinute = baseMinute + elapsed * SPEED_MINUTE;
+    const curSecond = baseSecond + elapsed * SPEED_SECOND;
 
-	const curHour = baseHour + elapsed * SPEED_HOUR;
-	const curMinute = baseMinute + elapsed * SPEED_MINUTE;
-	const curSecond = baseSecond + elapsed * SPEED_SECOND;
+    function forwardTo(cur, init) {
+        // 纯顺时针最短路径
+        let delta = ((init - cur) % 360 + 360) % 360;
+        return cur + delta;
+    }
 
-	function forwardTo(cur, init) {
-		let delta = ((init - cur) % 360 + 360) % 360;
-		if (delta < 30) delta += 360;
-		return cur + delta;
-	}
+    const targetHour = forwardTo(curHour, INIT_HOUR);
+    const targetMinute = forwardTo(curMinute, INIT_MINUTE);
+    const targetSecond = forwardTo(curSecond, INIT_SECOND);
 
-	const targetHour = forwardTo(curHour, INIT_HOUR);
-	const targetMinute = forwardTo(curMinute, INIT_MINUTE);
-	const targetSecond = forwardTo(curSecond, INIT_SECOND);
-
-	animateHandsTo(targetHour, targetMinute, targetSecond, duration, () => {
-		baseHour = INIT_HOUR;
-		baseMinute = INIT_MINUTE;
-		baseSecond = INIT_SECOND;
-		elapsed = 0;
-		updateHands();
-	});
+    animateHandsTo(targetHour, targetMinute, targetSecond, duration, () => {
+        // 这里修改的是全局变量
+        baseHour = INIT_HOUR;
+        baseMinute = INIT_MINUTE;
+        baseSecond = INIT_SECOND;
+        elapsed = 0;
+        updateHands();
+    });
 }
 
 /* ══════════════════════════════════════════════
@@ -324,6 +322,12 @@ function go(s, phase) {
 	// 回到封面：复位指针
 	if (state === 0 && prev !== 0) {
 		resetHandsToInit();
+	    stopTimerLoop();
+	    timerStarted = false;
+	    presentationStart = 0;
+	    timerZeroing = false;
+	    timerFrozen = false;
+	    timerDisplay.textContent = formatTime(0);
 	}
 
 	// 离开 Q&A：关闭 picker
@@ -438,7 +442,7 @@ qaPicker.addEventListener('click', (e) => {
 	if (e.target.closest('.picker-card')) return;
 	e.stopPropagation();
 	closePicker();
-	go(1);
+	go(0);
 });
 
 /* ══════════════════════════════════════════════
@@ -461,7 +465,7 @@ document.addEventListener('keydown', (e) => {
 			k === 'End') {
 			e.preventDefault();
 			closePicker();
-			go(1);
+			go(0);
 			return;
 		}
 		if (k === 'PageUp' || k === 'ArrowUp' || k === 'Escape' ||
