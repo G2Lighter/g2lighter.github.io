@@ -372,6 +372,11 @@ TOC
 	opacity: .7;
 	margin-bottom: 24px;
 	translate: -23px;
+	transition: .5s;
+}
+
+.stage.state-2 .toc-label {
+	translate: -50px;
 }
 
 .toc-list {
