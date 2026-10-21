@@ -181,7 +181,7 @@ function snapTo12(duration = 1100) {
 		return Math.ceil((cur + 5) / 360) * 360;
 	}
 
-	const targetHour = toTwelve(curHour);
+	const targetHour = toTwelve(curHour) + 360;
 	const targetMinute = toTwelve(curMinute);
 	const targetSecond = toTwelve(curSecond);
 
