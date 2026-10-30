@@ -4224,12 +4224,12 @@ blockquote,
     display: -ms-flexbox;
     display: flex;
     font-size: 0;
+	flex-wrap: wrap;
 }
 
 #side-bar a {
     display: block;
-    padding: .2em;
-    padding-left: .5em;
+    padding: .2em .5em;
     position: relative;
     z-index: 1;
     font-size: 1rem;
@@ -4240,7 +4240,6 @@ blockquote,
 
 #side-bar a:hover {
     text-decoration: none;
-    padding-left: .5em;
     background-color: unset;
     color: var(--highlight-color);
 }
