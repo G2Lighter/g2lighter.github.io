@@ -13,7 +13,7 @@
 
 /* 圣诞节START */
 /*
-#header .printuser a:last-child[href*="http://www.wikidot.com/user:info/"]::before {
+#header .printuser a:last-child[href*="https://www.wikidot.com/user:info/"]::before {
     content: '';
     position: absolute;
     display: block;
