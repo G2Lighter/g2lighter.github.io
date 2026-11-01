@@ -398,22 +398,33 @@ div .christmas {
 .snowflake {
     position: fixed;
     top: -10%;
-    z-index: 10;
+    z-index: 9999;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: default;
     pointer-events: none;
-    -webkit-animation-name: snowflakes-fall, snowflakes-shake, snow;
+    -webkit-animation-name: snowflakes-fall, snowflakes-shake;
     -webkit-animation-duration: 10s, 3s;
     -webkit-animation-timing-function: linear, ease-in-out;
     -webkit-animation-iteration-count: infinite, infinite;
     -webkit-animation-play-state: running, running;
-    animation-name: snowflakes-fall, snowflakes-shake, snow;
-    animation-duration: 10s, 3s;
-    animation-timing-function: linear, ease-in-out;
-    animation-iteration-count: infinite, infinite;
-    animation-play-state: running, running
+    -moz-animation-name: snowflakes-fall, snowflakes-shake;
+      -o-animation-name: snowflakes-fall, snowflakes-shake;
+         animation-name: snowflakes-fall, snowflakes-shake;
+    -moz-animation-duration: 10s, 3s;
+      -o-animation-duration: 10s, 3s;
+         animation-duration: 10s, 3s;
+    -moz-animation-timing-function: linear, ease-in-out;
+      -o-animation-timing-function: linear, ease-in-out;
+         animation-timing-function: linear, ease-in-out;
+    -moz-animation-iteration-count: infinite, infinite;
+      -o-animation-iteration-count: infinite, infinite;
+         animation-iteration-count: infinite, infinite;
+    -moz-animation-play-state: running, running;
+      -o-animation-play-state: running, running;
+         animation-play-state: running, running
 }
  
 .snowflake:nth-of-type(0) {
@@ -688,16 +699,27 @@ div .newyr {
     -ms-user-select: none;
     user-select: none;
     cursor: default;
+    pointer-events: none;
     -webkit-animation-name: snowflakes-fall, snowflakes-shake;
     -webkit-animation-duration: 10s, 3s;
     -webkit-animation-timing-function: linear, ease-in-out;
     -webkit-animation-iteration-count: infinite, infinite;
     -webkit-animation-play-state: running, running;
-    animation-name: snowflakes-fall, snowflakes-shake;
-    animation-duration: 10s, 3s;
-    animation-timing-function: linear, ease-in-out;
-    animation-iteration-count: infinite, infinite;
-    animation-play-state: running, running
+    -moz-animation-name: snowflakes-fall, snowflakes-shake;
+      -o-animation-name: snowflakes-fall, snowflakes-shake;
+         animation-name: snowflakes-fall, snowflakes-shake;
+    -moz-animation-duration: 10s, 3s;
+      -o-animation-duration: 10s, 3s;
+         animation-duration: 10s, 3s;
+    -moz-animation-timing-function: linear, ease-in-out;
+      -o-animation-timing-function: linear, ease-in-out;
+         animation-timing-function: linear, ease-in-out;
+    -moz-animation-iteration-count: infinite, infinite;
+      -o-animation-iteration-count: infinite, infinite;
+         animation-iteration-count: infinite, infinite;
+    -moz-animation-play-state: running, running;
+      -o-animation-play-state: running, running;
+         animation-play-state: running, running
 }
  
 .snowflake:nth-of-type(0) {
